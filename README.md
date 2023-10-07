@@ -7,7 +7,7 @@
 </div>
 
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 go get github.com/speakeasy-sdks/taamai
@@ -16,8 +16,6 @@ go get github.com/speakeasy-sdks/taamai
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
@@ -55,10 +53,10 @@ func main() {
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [AddonFeatures](docs/sdks/addonfeatures/README.md)
+### [AddonFeatures](docs/sdks/addonfeatures/README.md)
 
 * [GenerateCode](docs/sdks/addonfeatures/README.md#generatecode) - Generate Code
 * [GenerateimagefromAI](docs/sdks/addonfeatures/README.md#generateimagefromai) - Generate image from AI
@@ -66,7 +64,7 @@ func main() {
 * [Savecodeinworkspace](docs/sdks/addonfeatures/README.md#savecodeinworkspace) - Save code in workspace
 * [Savetranscript](docs/sdks/addonfeatures/README.md#savetranscript) - Save transcript
 
-## [CustimTemplates](docs/sdks/custimtemplates/README.md)
+### [CustimTemplates](docs/sdks/custimtemplates/README.md)
 
 * [CreateCustomTemplate](docs/sdks/custimtemplates/README.md#createcustomtemplate) - Create Custom Template
 * [CustomTemplategenerate](docs/sdks/custimtemplates/README.md#customtemplategenerate) - Custom Template generate
@@ -76,11 +74,11 @@ func main() {
 * [RestoreCustomtemplate](docs/sdks/custimtemplates/README.md#restorecustomtemplate) - Restore Custom template
 * [TrashedCustomTemplates](docs/sdks/custimtemplates/README.md#trashedcustomtemplates) - Trashed Custom Templates
 
-## [Misc](docs/sdks/misc/README.md)
+### [Misc](docs/sdks/misc/README.md)
 
 * [AllCategories](docs/sdks/misc/README.md#allcategories) - All Categories
 
-## [Product](docs/sdks/product/README.md)
+### [Product](docs/sdks/product/README.md)
 
 * [CreateProduct](docs/sdks/product/README.md#createproduct) - Create Product
 * [DeleteProduct](docs/sdks/product/README.md#deleteproduct) - Delete Product
@@ -90,7 +88,7 @@ func main() {
 * [UserProductd](docs/sdks/product/README.md#userproductd) - User Productd
 * [ParmenentdeleteProduct](docs/sdks/product/README.md#parmenentdeleteproduct) - parmenent delete Product
 
-## [PromptTemplate](docs/sdks/prompttemplate/README.md)
+### [PromptTemplate](docs/sdks/prompttemplate/README.md)
 
 * [Addandremovefrombookmarkprompttemplate](docs/sdks/prompttemplate/README.md#addandremovefrombookmarkprompttemplate) - Add and remove from bookmark prompt template
 * [CreatePromptTemplate](docs/sdks/prompttemplate/README.md#createprompttemplate) - Create Prompt Template
@@ -102,7 +100,7 @@ func main() {
 * [Deleteprmopttemplate](docs/sdks/prompttemplate/README.md#deleteprmopttemplate) - delete prmopt template
 * [Prompttemplatelikeorremovefromlike](docs/sdks/prompttemplate/README.md#prompttemplatelikeorremovefromlike) - prompt template like or remove from like
 
-## [Templates](docs/sdks/templates/README.md)
+### [Templates](docs/sdks/templates/README.md)
 
 * [AllTemplates](docs/sdks/templates/README.md#alltemplates) - All Templates
 * [FavTemplates](docs/sdks/templates/README.md#favtemplates) - Fav Templates
@@ -111,7 +109,7 @@ func main() {
 * [TemplateDetail](docs/sdks/templates/README.md#templatedetail) - Template Detail
 * [Templategroups](docs/sdks/templates/README.md#templategroups) - Template groups
 
-## [WorkbookAndFolders](docs/sdks/workbookandfolders/README.md)
+### [WorkbookAndFolders](docs/sdks/workbookandfolders/README.md)
 
 * [AddandremovefromfavDocument](docs/sdks/workbookandfolders/README.md#addandremovefromfavdocument) - Add and remove from fav Document
 * [Contentsinworkbook](docs/sdks/workbookandfolders/README.md#contentsinworkbook) - Contents in work book
@@ -141,12 +139,12 @@ func main() {
 * [Workbookpolicies](docs/sdks/workbookandfolders/README.md#workbookpolicies) - workbook policies
 * [Workbooktranscripts](docs/sdks/workbookandfolders/README.md#workbooktranscripts) - workbook transcripts
 
-## [Auth](docs/sdks/auth/README.md)
+### [Auth](docs/sdks/auth/README.md)
 
 * [Register](docs/sdks/auth/README.md#register) - Register
 * [Login](docs/sdks/auth/README.md#login) - login
 
-## [ChatWithPdf](docs/sdks/chatwithpdf/README.md)
+### [ChatWithPdf](docs/sdks/chatwithpdf/README.md)
 
 * [NewRequest](docs/sdks/chatwithpdf/README.md#newrequest) - New Request
 * [Sendandgetmsgtochatpdf](docs/sdks/chatwithpdf/README.md#sendandgetmsgtochatpdf) - Send and get msg to chat pdf
@@ -156,8 +154,6 @@ func main() {
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -169,8 +165,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `nil`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Start Go Types -->

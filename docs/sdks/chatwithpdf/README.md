@@ -87,7 +87,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ChatWithPdf.Sendandgetmsgtochatpdf(ctx, operations.SendandgetmsgtochatpdfRequestBody{
+    res, err := s.ChatWithPdf.Sendandgetmsgtochatpdf(ctx, &operations.SendandgetmsgtochatpdfRequestBody{
         Question: "what is the education",
     })
     if err != nil {
@@ -139,7 +139,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ChatWithPdf.Fileupload(ctx, operations.FileuploadRequestBody{
+    res, err := s.ChatWithPdf.Fileupload(ctx, &operations.FileuploadRequestBody{
         File: operations.FileuploadRequestBodyFile{
             Content: []byte("d5#rF'h3C;"),
             File: "Martin coleslaw application",
@@ -194,7 +194,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ChatWithPdf.Pdftotext(ctx, operations.PdftotextRequestBody{
+    res, err := s.ChatWithPdf.Pdftotext(ctx, &operations.PdftotextRequestBody{
         File: operations.PdftotextRequestBodyFile{
             Content: []byte("!|%P7_AE=r"),
             File: "woman secured",
@@ -249,7 +249,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.ChatWithPdf.Uploadfileforchatpdf(ctx, operations.UploadfileforchatpdfRequestBody{
+    res, err := s.ChatWithPdf.Uploadfileforchatpdf(ctx, &operations.UploadfileforchatpdfRequestBody{
         File: operations.UploadfileforchatpdfRequestBodyFile{
             Content: []byte(";-SdSu^1BO"),
             File: "radian",

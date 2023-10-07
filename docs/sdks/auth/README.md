@@ -87,7 +87,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Auth.Login(ctx, operations.LoginRequestBody{
+    res, err := s.Auth.Login(ctx, &operations.LoginRequestBody{
         Email: "sobanshahid47@gmail.com",
         Password: "ali112233",
     })

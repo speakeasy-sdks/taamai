@@ -36,7 +36,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Product.CreateProduct(ctx, operations.CreateProductRequestBody{
+    res, err := s.Product.CreateProduct(ctx, &operations.CreateProductRequestBody{
         BulletPoints: "friend",
         Description: "THis is testing",
         Name: "New Product",
