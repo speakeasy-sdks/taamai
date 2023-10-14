@@ -28,9 +28,7 @@ import(
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(shared.Security{
-            Bearer: "",
-        }),
+        taamai.WithSecurity(""),
     )
 
     ctx := context.Background()
@@ -83,9 +81,7 @@ import(
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(shared.Security{
-            Bearer: "",
-        }),
+        taamai.WithSecurity(""),
     )
 
     ctx := context.Background()
@@ -141,9 +137,7 @@ import(
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(shared.Security{
-            Bearer: "",
-        }),
+        taamai.WithSecurity(""),
     )
 
     ctx := context.Background()
@@ -202,9 +196,7 @@ import(
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(shared.Security{
-            Bearer: "",
-        }),
+        taamai.WithSecurity(""),
     )
 
     ctx := context.Background()
@@ -257,9 +249,7 @@ import(
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(shared.Security{
-            Bearer: "",
-        }),
+        taamai.WithSecurity(""),
     )
 
     ctx := context.Background()
