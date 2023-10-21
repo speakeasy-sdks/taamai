@@ -141,9 +141,9 @@ func New(opts ...SDKOption) *Taamai {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0",
-			SDKVersion:        "0.1.2",
-			GenVersion:        "2.155.1",
-			UserAgent:         "speakeasy-sdk/go 0.1.2 2.155.1 1.0 github.com/speakeasy-sdks/taamai",
+			SDKVersion:        "0.2.0",
+			GenVersion:        "2.169.0",
+			UserAgent:         "speakeasy-sdk/go 0.2.0 2.169.0 1.0 github.com/speakeasy-sdks/taamai",
 		},
 	}
 	for _, opt := range opts {

@@ -143,8 +143,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AddonFeatures.Generatespeechtotext(ctx, &operations.GeneratespeechtotextRequestBody{
         AudioFile: operations.GeneratespeechtotextRequestBodyAudioFile{
-            AudioFile: "Dinar Bicycle",
-            Content: []byte(",3S}7YH8}T"),
+            AudioFile: "string",
+            Content: []byte("\H(gC_iAf,"),
         },
         Document: "new",
         Language: "en",

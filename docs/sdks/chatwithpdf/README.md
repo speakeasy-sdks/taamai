@@ -136,7 +136,7 @@ func main() {
     res, err := s.ChatWithPdf.Fileupload(ctx, &operations.FileuploadRequestBody{
         File: operations.FileuploadRequestBodyFile{
             Content: []byte("d5#rF'h3C;"),
-            File: "Martin coleslaw application",
+            File: "string",
         },
     })
     if err != nil {
@@ -189,7 +189,7 @@ func main() {
     res, err := s.ChatWithPdf.Pdftotext(ctx, &operations.PdftotextRequestBody{
         File: operations.PdftotextRequestBodyFile{
             Content: []byte("!|%P7_AE=r"),
-            File: "woman secured",
+            File: "string",
         },
     })
     if err != nil {
@@ -242,7 +242,7 @@ func main() {
     res, err := s.ChatWithPdf.Uploadfileforchatpdf(ctx, &operations.UploadfileforchatpdfRequestBody{
         File: operations.UploadfileforchatpdfRequestBodyFile{
             Content: []byte(";-SdSu^1BO"),
-            File: "radian",
+            File: "string",
         },
     })
     if err != nil {
