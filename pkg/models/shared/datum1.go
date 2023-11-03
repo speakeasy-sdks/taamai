@@ -124,16 +124,16 @@ func CreateDatum1FoldersStr(str string) Datum1Folders {
 
 func (u *Datum1Folders) UnmarshalJSON(data []byte) error {
 
-	datum1FoldersFolder := new(Datum1FoldersFolder)
+	datum1FoldersFolder := Datum1FoldersFolder{}
 	if err := utils.UnmarshalJSON(data, &datum1FoldersFolder, "", true, true); err == nil {
-		u.Datum1FoldersFolder = datum1FoldersFolder
+		u.Datum1FoldersFolder = &datum1FoldersFolder
 		u.Type = Datum1FoldersTypeDatum1FoldersFolder
 		return nil
 	}
 
-	str := new(string)
+	str := ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = str
+		u.Str = &str
 		u.Type = Datum1FoldersTypeStr
 		return nil
 	}
