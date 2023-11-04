@@ -45,28 +45,28 @@ func CreateData4WordsAny(any interface{}) Data4Words {
 	typ := Data4WordsTypeAny
 
 	return Data4Words{
-		Any:  &any,
+		Any:  any,
 		Type: typ,
 	}
 }
 
 func (u *Data4Words) UnmarshalJSON(data []byte) error {
 
-	str := new(string)
+	str := ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = str
+		u.Str = &str
 		u.Type = Data4WordsTypeStr
 		return nil
 	}
 
-	int32Var := new(int)
+	int32Var := 0
 	if err := utils.UnmarshalJSON(data, &int32Var, "", true, true); err == nil {
-		u.Int32 = int32Var
+		u.Int32 = &int32Var
 		u.Type = Data4WordsTypeInt32
 		return nil
 	}
 
-	any := new(interface{})
+	any := nil
 	if err := utils.UnmarshalJSON(data, &any, "", true, true); err == nil {
 		u.Any = any
 		u.Type = Data4WordsTypeAny

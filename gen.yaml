@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: e68b021f45280da7f9b8c19469821a11
   docVersion: "1.0"
-  speakeasyVersion: 1.104.0
-  generationVersion: 2.169.0
+  speakeasyVersion: 1.111.2
+  generationVersion: 2.173.0
 generation:
   comments:
     disableComments: false
@@ -19,9 +19,9 @@ features:
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.0
     methodServerURLs: 2.82.0
-    unions: 2.84.0
+    unions: 2.84.1
 go:
-  version: 0.2.0
+  version: 0.2.1
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   installationURL: https://github.com/speakeasy-sdks/taamai
