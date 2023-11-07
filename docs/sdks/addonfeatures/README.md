@@ -1,5 +1,5 @@
 # AddonFeatures
-(*AddonFeatures*)
+(*.AddonFeatures*)
 
 ### Available Operations
 
@@ -142,9 +142,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AddonFeatures.Generatespeechtotext(ctx, &operations.GeneratespeechtotextRequestBody{
-        AudioFile: operations.GeneratespeechtotextRequestBodyAudioFile{
-            AudioFile: "string",
-            Content: []byte("\H(gC_iAf,"),
+        AudioFile: operations.AudioFile{
+            Content: []byte("0xe91A8eB7A2"),
+            FileName: "parse.wav",
         },
         Document: "new",
         Language: "en",

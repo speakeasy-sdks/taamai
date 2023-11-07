@@ -1,5 +1,5 @@
 # PromptTemplate
-(*PromptTemplate*)
+(*.PromptTemplate*)
 
 ### Available Operations
 

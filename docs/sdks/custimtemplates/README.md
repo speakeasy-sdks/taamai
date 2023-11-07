@@ -1,5 +1,5 @@
 # CustimTemplates
-(*CustimTemplates*)
+(*.CustimTemplates*)
 
 ### Available Operations
 

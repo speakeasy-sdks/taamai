@@ -1,5 +1,5 @@
 # Templates
-(*Templates*)
+(*.Templates*)
 
 ### Available Operations
 

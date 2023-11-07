@@ -1,5 +1,5 @@
 # Product
-(*Product*)
+(*.Product*)
 
 ### Available Operations
 

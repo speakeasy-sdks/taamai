@@ -1,5 +1,5 @@
 # WorkbookAndFolders
-(*WorkbookAndFolders*)
+(*.WorkbookAndFolders*)
 
 ### Available Operations
 

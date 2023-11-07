@@ -1,5 +1,5 @@
 # Misc
-(*Misc*)
+(*.Misc*)
 
 ### Available Operations
 
