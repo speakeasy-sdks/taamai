@@ -1,5 +1,5 @@
 # Misc
-(*Misc*)
+(*.Misc*)
 
 ### Available Operations
 
@@ -53,4 +53,6 @@ func main() {
 ### Response
 
 **[*operations.AllCategoriesResponse](../../models/operations/allcategoriesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

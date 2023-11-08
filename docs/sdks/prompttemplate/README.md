@@ -1,5 +1,5 @@
 # PromptTemplate
-(*PromptTemplate*)
+(*.PromptTemplate*)
 
 ### Available Operations
 
@@ -62,7 +62,9 @@ func main() {
 ### Response
 
 **[*operations.AddandremovefrombookmarkprompttemplateResponse](../../models/operations/addandremovefrombookmarkprompttemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## CreatePromptTemplate
 
@@ -125,7 +127,9 @@ func main() {
 ### Response
 
 **[*operations.CreatePromptTemplateResponse](../../models/operations/createprompttemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Generateprompttemplate
 
@@ -185,7 +189,9 @@ func main() {
 ### Response
 
 **[*operations.GenerateprompttemplateResponse](../../models/operations/generateprompttemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## ParmanentDeletePrompttemplate
 
@@ -236,7 +242,9 @@ func main() {
 ### Response
 
 **[*operations.ParmanentDeletePrompttemplateResponse](../../models/operations/parmanentdeleteprompttemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PromptTemplates
 
@@ -288,7 +296,9 @@ func main() {
 ### Response
 
 **[*operations.PromptTemplatesResponse](../../models/operations/prompttemplatesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RestorePromptTemplate
 
@@ -339,7 +349,9 @@ func main() {
 ### Response
 
 **[*operations.RestorePromptTemplateResponse](../../models/operations/restoreprompttemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## TrashedPromptTemplates
 
@@ -389,7 +401,9 @@ func main() {
 ### Response
 
 **[*operations.TrashedPromptTemplatesResponse](../../models/operations/trashedprompttemplatesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Deleteprmopttemplate
 
@@ -440,7 +454,9 @@ func main() {
 ### Response
 
 **[*operations.DeleteprmopttemplateResponse](../../models/operations/deleteprmopttemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Prompttemplatelikeorremovefromlike
 
@@ -491,4 +507,6 @@ func main() {
 ### Response
 
 **[*operations.PrompttemplatelikeorremovefromlikeResponse](../../models/operations/prompttemplatelikeorremovefromlikeresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

@@ -1,5 +1,5 @@
 # Product
-(*Product*)
+(*.Product*)
 
 ### Available Operations
 
@@ -65,7 +65,9 @@ func main() {
 ### Response
 
 **[*operations.CreateProductResponse](../../models/operations/createproductresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## DeleteProduct
 
@@ -116,7 +118,9 @@ func main() {
 ### Response
 
 **[*operations.DeleteProductResponse](../../models/operations/deleteproductresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RestoreProduct
 
@@ -167,7 +171,9 @@ func main() {
 ### Response
 
 **[*operations.RestoreProductResponse](../../models/operations/restoreproductresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## TrashedProducts
 
@@ -217,7 +223,9 @@ func main() {
 ### Response
 
 **[*operations.TrashedProductsResponse](../../models/operations/trashedproductsresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## UpdateProduct
 
@@ -273,7 +281,9 @@ func main() {
 ### Response
 
 **[*operations.UpdateProductResponse](../../models/operations/updateproductresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## UserProductd
 
@@ -323,7 +333,9 @@ func main() {
 ### Response
 
 **[*operations.UserProductdResponse](../../models/operations/userproductdresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## ParmenentdeleteProduct
 
@@ -374,4 +386,6 @@ func main() {
 ### Response
 
 **[*operations.ParmenentdeleteProductResponse](../../models/operations/parmenentdeleteproductresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

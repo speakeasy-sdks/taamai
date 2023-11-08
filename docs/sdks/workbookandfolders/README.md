@@ -1,5 +1,5 @@
 # WorkbookAndFolders
-(*WorkbookAndFolders*)
+(*.WorkbookAndFolders*)
 
 ### Available Operations
 
@@ -81,7 +81,9 @@ func main() {
 ### Response
 
 **[*operations.AddandremovefromfavDocumentResponse](../../models/operations/addandremovefromfavdocumentresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Contentsinworkbook
 
@@ -133,7 +135,9 @@ func main() {
 ### Response
 
 **[*operations.ContentsinworkbookResponse](../../models/operations/contentsinworkbookresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## CreateFolder
 
@@ -185,7 +189,9 @@ func main() {
 ### Response
 
 **[*operations.CreateFolderResponse](../../models/operations/createfolderresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## CreateWorkbook
 
@@ -236,7 +242,9 @@ func main() {
 ### Response
 
 **[*operations.CreateWorkbookResponse](../../models/operations/createworkbookresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## DeleteWorkspace
 
@@ -287,7 +295,9 @@ func main() {
 ### Response
 
 **[*operations.DeleteWorkspaceResponse](../../models/operations/deleteworkspaceresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Deleteallkindofdocuments
 
@@ -333,7 +343,9 @@ func main() {
 ### Response
 
 **[*operations.DeleteallkindofdocumentsResponse](../../models/operations/deleteallkindofdocumentsresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Joinworkbook
 
@@ -384,7 +396,9 @@ func main() {
 ### Response
 
 **[*operations.JoinworkbookResponse](../../models/operations/joinworkbookresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Joinworkbookrequestr
 
@@ -436,7 +450,9 @@ func main() {
 ### Response
 
 **[*operations.JoinworkbookrequestrResponse](../../models/operations/joinworkbookrequestrresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PermanentDeletefolder
 
@@ -487,7 +503,9 @@ func main() {
 ### Response
 
 **[*operations.PermanentDeletefolderResponse](../../models/operations/permanentdeletefolderresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PermanentDeleteworkspace
 
@@ -532,7 +550,9 @@ func main() {
 ### Response
 
 **[*operations.PermanentDeleteworkspaceResponse](../../models/operations/permanentdeleteworkspaceresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RejectWorkbook
 
@@ -583,7 +603,9 @@ func main() {
 ### Response
 
 **[*operations.RejectWorkbookResponse](../../models/operations/rejectworkbookresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCode
 
@@ -635,7 +657,9 @@ func main() {
 ### Response
 
 **[*operations.RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse](../../models/operations/restoredocuemntofalltypecontentvoiceoverimagestranscriptcoderesponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RestoreWorkspace
 
@@ -686,7 +710,9 @@ func main() {
 ### Response
 
 **[*operations.RestoreWorkspaceResponse](../../models/operations/restoreworkspaceresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Setdefualtworkspace
 
@@ -737,7 +763,9 @@ func main() {
 ### Response
 
 **[*operations.SetdefualtworkspaceResponse](../../models/operations/setdefualtworkspaceresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Trashedfolders
 
@@ -788,7 +816,9 @@ func main() {
 ### Response
 
 **[*operations.TrashedfoldersResponse](../../models/operations/trashedfoldersresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Trashedworkspaces
 
@@ -838,7 +868,9 @@ func main() {
 ### Response
 
 **[*operations.TrashedworkspacesResponse](../../models/operations/trashedworkspacesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## WorkbookDetail
 
@@ -889,7 +921,9 @@ func main() {
 ### Response
 
 **[*operations.WorkbookDetailResponse](../../models/operations/workbookdetailresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbookvoiceovers
 
@@ -942,7 +976,9 @@ func main() {
 ### Response
 
 **[*operations.WorkbookvoiceoversResponse](../../models/operations/workbookvoiceoversresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Allworkbooks
 
@@ -992,7 +1028,9 @@ func main() {
 ### Response
 
 **[*operations.AllworkbooksResponse](../../models/operations/allworkbooksresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Deletefolder
 
@@ -1043,7 +1081,9 @@ func main() {
 ### Response
 
 **[*operations.DeletefolderResponse](../../models/operations/deletefolderresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PermanentDeletedocument
 
@@ -1095,7 +1135,9 @@ func main() {
 ### Response
 
 **[*operations.PermanentDeletedocumentResponse](../../models/operations/permanentdeletedocumentresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Restorefolder
 
@@ -1146,7 +1188,9 @@ func main() {
 ### Response
 
 **[*operations.RestorefolderResponse](../../models/operations/restorefolderresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Userchats
 
@@ -1197,7 +1241,9 @@ func main() {
 ### Response
 
 **[*operations.UserchatsResponse](../../models/operations/userchatsresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbookcodes
 
@@ -1250,7 +1296,9 @@ func main() {
 ### Response
 
 **[*operations.WorkbookcodesResponse](../../models/operations/workbookcodesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbookimages
 
@@ -1303,7 +1351,9 @@ func main() {
 ### Response
 
 **[*operations.WorkbookimagesResponse](../../models/operations/workbookimagesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbookpolicies
 
@@ -1354,7 +1404,9 @@ func main() {
 ### Response
 
 **[*operations.WorkbookpoliciesResponse](../../models/operations/workbookpoliciesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbooktranscripts
 
@@ -1407,4 +1459,6 @@ func main() {
 ### Response
 
 **[*operations.WorkbooktranscriptsResponse](../../models/operations/workbooktranscriptsresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

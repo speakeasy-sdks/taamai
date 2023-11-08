@@ -1,5 +1,5 @@
 # AddonFeatures
-(*AddonFeatures*)
+(*.AddonFeatures*)
 
 ### Available Operations
 
@@ -60,7 +60,9 @@ func main() {
 ### Response
 
 **[*operations.GenerateCodeResponse](../../models/operations/generatecoderesponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GenerateimagefromAI
 
@@ -116,7 +118,9 @@ func main() {
 ### Response
 
 **[*operations.GenerateimagefromAIResponse](../../models/operations/generateimagefromairesponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Generatespeechtotext
 
@@ -142,9 +146,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AddonFeatures.Generatespeechtotext(ctx, &operations.GeneratespeechtotextRequestBody{
-        AudioFile: operations.GeneratespeechtotextRequestBodyAudioFile{
-            AudioFile: "string",
-            Content: []byte("\H(gC_iAf,"),
+        AudioFile: operations.AudioFile{
+            Content: []byte("0xe91A8eB7A2"),
+            FileName: "parse.wav",
         },
         Document: "new",
         Language: "en",
@@ -175,7 +179,9 @@ func main() {
 ### Response
 
 **[*operations.GeneratespeechtotextResponse](../../models/operations/generatespeechtotextresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Savecodeinworkspace
 
@@ -228,7 +234,9 @@ func main() {
 ### Response
 
 **[*operations.SavecodeinworkspaceResponse](../../models/operations/savecodeinworkspaceresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Savetranscript
 
@@ -284,4 +292,6 @@ func main() {
 ### Response
 
 **[*operations.SavetranscriptResponse](../../models/operations/savetranscriptresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

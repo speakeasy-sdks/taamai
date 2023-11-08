@@ -1,5 +1,5 @@
 # Templates
-(*Templates*)
+(*.Templates*)
 
 ### Available Operations
 
@@ -58,7 +58,9 @@ func main() {
 ### Response
 
 **[*operations.AllTemplatesResponse](../../models/operations/alltemplatesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## FavTemplates
 
@@ -108,7 +110,9 @@ func main() {
 ### Response
 
 **[*operations.FavTemplatesResponse](../../models/operations/favtemplatesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## GenerateTemplate
 
@@ -167,7 +171,9 @@ func main() {
 ### Response
 
 **[*operations.GenerateTemplateResponse](../../models/operations/generatetemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## ProcessTemplate
 
@@ -221,7 +227,9 @@ func main() {
 ### Response
 
 **[*operations.ProcessTemplateResponse](../../models/operations/processtemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## TemplateDetail
 
@@ -272,7 +280,9 @@ func main() {
 ### Response
 
 **[*operations.TemplateDetailResponse](../../models/operations/templatedetailresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Templategroups
 
@@ -318,4 +328,6 @@ func main() {
 ### Response
 
 **[*operations.TemplategroupsResponse](../../models/operations/templategroupsresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

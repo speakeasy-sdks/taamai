@@ -1,5 +1,5 @@
 # CustimTemplates
-(*CustimTemplates*)
+(*.CustimTemplates*)
 
 ### Available Operations
 
@@ -54,7 +54,9 @@ func main() {
 ### Response
 
 **[*operations.CreateCustomTemplateResponse](../../models/operations/createcustomtemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## CustomTemplategenerate
 
@@ -115,7 +117,9 @@ func main() {
 ### Response
 
 **[*operations.CustomTemplategenerateResponse](../../models/operations/customtemplategenerateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## CustomTemplates
 
@@ -165,7 +169,9 @@ func main() {
 ### Response
 
 **[*operations.CustomTemplatesResponse](../../models/operations/customtemplatesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## DeleteCustomtemplate
 
@@ -216,7 +222,9 @@ func main() {
 ### Response
 
 **[*operations.DeleteCustomtemplateResponse](../../models/operations/deletecustomtemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## FavCustomTemplates
 
@@ -266,7 +274,9 @@ func main() {
 ### Response
 
 **[*operations.FavCustomTemplatesResponse](../../models/operations/favcustomtemplatesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RestoreCustomtemplate
 
@@ -317,7 +327,9 @@ func main() {
 ### Response
 
 **[*operations.RestoreCustomtemplateResponse](../../models/operations/restorecustomtemplateresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## TrashedCustomTemplates
 
@@ -367,4 +379,6 @@ func main() {
 ### Response
 
 **[*operations.TrashedCustomTemplatesResponse](../../models/operations/trashedcustomtemplatesresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

@@ -1,4 +1,4 @@
-# LoginLoginUser
+# User
 
 
 ## Fields

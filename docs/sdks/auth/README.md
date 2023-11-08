@@ -1,5 +1,5 @@
 # Auth
-(*Auth*)
+(*.Auth*)
 
 ### Available Operations
 
@@ -58,7 +58,9 @@ func main() {
 ### Response
 
 **[*operations.RegisterResponse](../../models/operations/registerresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Login
 
@@ -109,4 +111,6 @@ func main() {
 ### Response
 
 **[*operations.LoginResponse](../../models/operations/loginresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

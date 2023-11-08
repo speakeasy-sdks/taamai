@@ -1,5 +1,5 @@
 # ChatWithPdf
-(*ChatWithPdf*)
+(*.ChatWithPdf*)
 
 ### Available Operations
 
@@ -58,7 +58,9 @@ func main() {
 ### Response
 
 **[*operations.NewRequestResponse](../../models/operations/newrequestresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Sendandgetmsgtochatpdf
 
@@ -108,7 +110,9 @@ func main() {
 ### Response
 
 **[*operations.SendandgetmsgtochatpdfResponse](../../models/operations/sendandgetmsgtochatpdfresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Fileupload
 
@@ -134,9 +138,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ChatWithPdf.Fileupload(ctx, &operations.FileuploadRequestBody{
-        File: operations.FileuploadRequestBodyFile{
-            Content: []byte("d5#rF'h3C;"),
-            File: "string",
+        File: operations.File{
+            Content: []byte("0xA40D81A486"),
+            FileName: "martin_coleslaw_application.gif",
         },
     })
     if err != nil {
@@ -161,7 +165,9 @@ func main() {
 ### Response
 
 **[*operations.FileuploadResponse](../../models/operations/fileuploadresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Pdftotext
 
@@ -187,9 +193,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ChatWithPdf.Pdftotext(ctx, &operations.PdftotextRequestBody{
-        File: operations.PdftotextRequestBodyFile{
-            Content: []byte("!|%P7_AE=r"),
-            File: "string",
+        File: operations.PdftotextFile{
+            Content: []byte("0x0F1b5e786D"),
+            FileName: "woman_secured.pdf",
         },
     })
     if err != nil {
@@ -214,7 +220,9 @@ func main() {
 ### Response
 
 **[*operations.PdftotextResponse](../../models/operations/pdftotextresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Uploadfileforchatpdf
 
@@ -240,9 +248,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.ChatWithPdf.Uploadfileforchatpdf(ctx, &operations.UploadfileforchatpdfRequestBody{
-        File: operations.UploadfileforchatpdfRequestBodyFile{
-            Content: []byte(";-SdSu^1BO"),
-            File: "string",
+        File: operations.UploadfileforchatpdfFile{
+            Content: []byte("0x62cfbDe38b"),
+            FileName: "radian.mp4v",
         },
     })
     if err != nil {
@@ -267,4 +275,6 @@ func main() {
 ### Response
 
 **[*operations.UploadfileforchatpdfResponse](../../models/operations/uploadfileforchatpdfresponse.md), error**
-
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
