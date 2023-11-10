@@ -39,3 +39,13 @@ Based on:
 - [go v0.2.0] .
 ### Releases
 - [Go v0.2.0] https://github.com/speakeasy-sdks/taamai/releases/tag/v0.2.0 - .
+
+## 2023-11-10 00:25:44
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.118.3 (2.187.7) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.3.0] .
+### Releases
+- [Go v0.3.0] https://github.com/speakeasy-sdks/taamai/releases/tag/v0.3.0 - .
