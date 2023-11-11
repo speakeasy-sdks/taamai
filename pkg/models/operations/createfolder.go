@@ -37,7 +37,7 @@ func (o *CreateFolderRequest) GetWorkbookID() int {
 	return o.WorkbookID
 }
 
-type CreateFolderCreateFolderliveData3 struct {
+type Data3 struct {
 	CreatedAt   string  `json:"created_at"`
 	Description *string `json:"description"`
 	Icon        string  `json:"icon"`
@@ -48,56 +48,56 @@ type CreateFolderCreateFolderliveData3 struct {
 	WorkbookID  string  `json:"workbook_id"`
 }
 
-func (o *CreateFolderCreateFolderliveData3) GetCreatedAt() string {
+func (o *Data3) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *CreateFolderCreateFolderliveData3) GetDescription() *string {
+func (o *Data3) GetDescription() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Description
 }
 
-func (o *CreateFolderCreateFolderliveData3) GetIcon() string {
+func (o *Data3) GetIcon() string {
 	if o == nil {
 		return ""
 	}
 	return o.Icon
 }
 
-func (o *CreateFolderCreateFolderliveData3) GetID() int {
+func (o *Data3) GetID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ID
 }
 
-func (o *CreateFolderCreateFolderliveData3) GetName() string {
+func (o *Data3) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *CreateFolderCreateFolderliveData3) GetUpdatedAt() string {
+func (o *Data3) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.UpdatedAt
 }
 
-func (o *CreateFolderCreateFolderliveData3) GetUserID() string {
+func (o *Data3) GetUserID() string {
 	if o == nil {
 		return ""
 	}
 	return o.UserID
 }
 
-func (o *CreateFolderCreateFolderliveData3) GetWorkbookID() string {
+func (o *Data3) GetWorkbookID() string {
 	if o == nil {
 		return ""
 	}
@@ -106,14 +106,14 @@ func (o *CreateFolderCreateFolderliveData3) GetWorkbookID() string {
 
 // CreateFolderCreateFolderlive - OK
 type CreateFolderCreateFolderlive struct {
-	Data    CreateFolderCreateFolderliveData3 `json:"data"`
-	Message string                            `json:"message"`
-	Status  string                            `json:"status"`
+	Data    Data3  `json:"data"`
+	Message string `json:"message"`
+	Status  string `json:"status"`
 }
 
-func (o *CreateFolderCreateFolderlive) GetData() CreateFolderCreateFolderliveData3 {
+func (o *CreateFolderCreateFolderlive) GetData() Data3 {
 	if o == nil {
-		return CreateFolderCreateFolderliveData3{}
+		return Data3{}
 	}
 	return o.Data
 }
