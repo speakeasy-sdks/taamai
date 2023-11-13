@@ -29,7 +29,7 @@ func (o *CreateWorkbookRequest) GetWorkbookName() string {
 	return o.WorkbookName
 }
 
-type CreateWorkbookCreateWorkbooklivwData struct {
+type Data struct {
 	CreatedAt string `json:"created_at"`
 	ID        int    `json:"id"`
 	Name      string `json:"name"`
@@ -37,35 +37,35 @@ type CreateWorkbookCreateWorkbooklivwData struct {
 	UserID    string `json:"user_id"`
 }
 
-func (o *CreateWorkbookCreateWorkbooklivwData) GetCreatedAt() string {
+func (o *Data) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *CreateWorkbookCreateWorkbooklivwData) GetID() int {
+func (o *Data) GetID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ID
 }
 
-func (o *CreateWorkbookCreateWorkbooklivwData) GetName() string {
+func (o *Data) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *CreateWorkbookCreateWorkbooklivwData) GetUpdatedAt() string {
+func (o *Data) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.UpdatedAt
 }
 
-func (o *CreateWorkbookCreateWorkbooklivwData) GetUserID() string {
+func (o *Data) GetUserID() string {
 	if o == nil {
 		return ""
 	}
@@ -74,14 +74,14 @@ func (o *CreateWorkbookCreateWorkbooklivwData) GetUserID() string {
 
 // CreateWorkbookCreateWorkbooklivw - OK
 type CreateWorkbookCreateWorkbooklivw struct {
-	Data    CreateWorkbookCreateWorkbooklivwData `json:"data"`
-	Message string                               `json:"message"`
-	Status  string                               `json:"status"`
+	Data    Data   `json:"data"`
+	Message string `json:"message"`
+	Status  string `json:"status"`
 }
 
-func (o *CreateWorkbookCreateWorkbooklivw) GetData() CreateWorkbookCreateWorkbooklivwData {
+func (o *CreateWorkbookCreateWorkbooklivw) GetData() Data {
 	if o == nil {
-		return CreateWorkbookCreateWorkbooklivwData{}
+		return Data{}
 	}
 	return o.Data
 }
