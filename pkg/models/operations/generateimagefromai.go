@@ -69,7 +69,7 @@ func (o *GenerateimagefromAIRequest) GetWorkbookID() int {
 	return o.WorkbookID
 }
 
-type GenerateimagefromAIGenerateimagefromAIData17 struct {
+type Data17 struct {
 	CreatedAt        string `json:"created_at"`
 	Description      string `json:"description"`
 	ExpiresAt        string `json:"expires_at"`
@@ -87,105 +87,105 @@ type GenerateimagefromAIGenerateimagefromAIData17 struct {
 	WorkbookID       string `json:"workbook_id"`
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetCreatedAt() string {
+func (o *Data17) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetDescription() string {
+func (o *Data17) GetDescription() string {
 	if o == nil {
 		return ""
 	}
 	return o.Description
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetExpiresAt() string {
+func (o *Data17) GetExpiresAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.ExpiresAt
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetID() int {
+func (o *Data17) GetID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ID
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetImage() string {
+func (o *Data17) GetImage() string {
 	if o == nil {
 		return ""
 	}
 	return o.Image
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetImageName() string {
+func (o *Data17) GetImageName() string {
 	if o == nil {
 		return ""
 	}
 	return o.ImageName
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetImageURL() string {
+func (o *Data17) GetImageURL() string {
 	if o == nil {
 		return ""
 	}
 	return o.ImageURL
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetName() string {
+func (o *Data17) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetPlanType() string {
+func (o *Data17) GetPlanType() string {
 	if o == nil {
 		return ""
 	}
 	return o.PlanType
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetResolution() string {
+func (o *Data17) GetResolution() string {
 	if o == nil {
 		return ""
 	}
 	return o.Resolution
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetStorage() string {
+func (o *Data17) GetStorage() string {
 	if o == nil {
 		return ""
 	}
 	return o.Storage
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetUpdatedAt() string {
+func (o *Data17) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.UpdatedAt
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetUserID() int {
+func (o *Data17) GetUserID() int {
 	if o == nil {
 		return 0
 	}
 	return o.UserID
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetWorkbookFolderID() string {
+func (o *Data17) GetWorkbookFolderID() string {
 	if o == nil {
 		return ""
 	}
 	return o.WorkbookFolderID
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAIData17) GetWorkbookID() string {
+func (o *Data17) GetWorkbookID() string {
 	if o == nil {
 		return ""
 	}
@@ -194,10 +194,10 @@ func (o *GenerateimagefromAIGenerateimagefromAIData17) GetWorkbookID() string {
 
 // GenerateimagefromAIGenerateimagefromAI - OK
 type GenerateimagefromAIGenerateimagefromAI struct {
-	Current int                                          `json:"current"`
-	Data    GenerateimagefromAIGenerateimagefromAIData17 `json:"data"`
-	Old     string                                       `json:"old"`
-	Status  string                                       `json:"status"`
+	Current int    `json:"current"`
+	Data    Data17 `json:"data"`
+	Old     string `json:"old"`
+	Status  string `json:"status"`
 }
 
 func (o *GenerateimagefromAIGenerateimagefromAI) GetCurrent() int {
@@ -207,9 +207,9 @@ func (o *GenerateimagefromAIGenerateimagefromAI) GetCurrent() int {
 	return o.Current
 }
 
-func (o *GenerateimagefromAIGenerateimagefromAI) GetData() GenerateimagefromAIGenerateimagefromAIData17 {
+func (o *GenerateimagefromAIGenerateimagefromAI) GetData() Data17 {
 	if o == nil {
-		return GenerateimagefromAIGenerateimagefromAIData17{}
+		return Data17{}
 	}
 	return o.Data
 }

@@ -10,38 +10,38 @@ var GeneratespeechtotextServerList = []string{
 	"http://127.0.0.1:8000/api",
 }
 
-type GeneratespeechtotextRequestBodyAudioFile struct {
-	AudioFile string `multipartForm:"name=audio_file"`
-	Content   []byte `multipartForm:"content"`
+type AudioFile struct {
+	Content  []byte `multipartForm:"content"`
+	FileName string `multipartForm:"name=audio_file"`
 }
 
-func (o *GeneratespeechtotextRequestBodyAudioFile) GetAudioFile() string {
-	if o == nil {
-		return ""
-	}
-	return o.AudioFile
-}
-
-func (o *GeneratespeechtotextRequestBodyAudioFile) GetContent() []byte {
+func (o *AudioFile) GetContent() []byte {
 	if o == nil {
 		return []byte{}
 	}
 	return o.Content
 }
 
-type GeneratespeechtotextRequestBody struct {
-	AudioFile        GeneratespeechtotextRequestBodyAudioFile `multipartForm:"file"`
-	Document         string                                   `multipartForm:"name=document"`
-	Language         string                                   `multipartForm:"name=language"`
-	Task             string                                   `multipartForm:"name=task"`
-	UserID           int                                      `multipartForm:"name=user_id"`
-	WorkbookFolderID int                                      `multipartForm:"name=workbook_folder_id"`
-	WorkbookID       int                                      `multipartForm:"name=workbook_id"`
+func (o *AudioFile) GetFileName() string {
+	if o == nil {
+		return ""
+	}
+	return o.FileName
 }
 
-func (o *GeneratespeechtotextRequestBody) GetAudioFile() GeneratespeechtotextRequestBodyAudioFile {
+type GeneratespeechtotextRequestBody struct {
+	AudioFile        AudioFile `multipartForm:"file"`
+	Document         string    `multipartForm:"name=document"`
+	Language         string    `multipartForm:"name=language"`
+	Task             string    `multipartForm:"name=task"`
+	UserID           int       `multipartForm:"name=user_id"`
+	WorkbookFolderID int       `multipartForm:"name=workbook_folder_id"`
+	WorkbookID       int       `multipartForm:"name=workbook_id"`
+}
+
+func (o *GeneratespeechtotextRequestBody) GetAudioFile() AudioFile {
 	if o == nil {
-		return GeneratespeechtotextRequestBodyAudioFile{}
+		return AudioFile{}
 	}
 	return o.AudioFile
 }
