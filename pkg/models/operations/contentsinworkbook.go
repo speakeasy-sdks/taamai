@@ -66,7 +66,7 @@ func (o *ContentsinworkbookResponse) GetContentsinworkbook() *shared.Contentsinw
 
 func (o *ContentsinworkbookResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

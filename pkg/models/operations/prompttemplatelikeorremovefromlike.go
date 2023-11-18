@@ -78,7 +78,7 @@ func (o *PrompttemplatelikeorremovefromlikeResponse) GetContentType() string {
 
 func (o *PrompttemplatelikeorremovefromlikeResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
