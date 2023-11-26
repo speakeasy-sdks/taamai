@@ -86,7 +86,7 @@ func (o *SavecodeinworkspaceResponse) GetContentType() string {
 
 func (o *SavecodeinworkspaceResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

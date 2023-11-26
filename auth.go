@@ -14,18 +14,18 @@ import (
 	"strings"
 )
 
-type auth struct {
+type Auth struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAuth(sdkConfig sdkConfiguration) *auth {
-	return &auth{
+func newAuth(sdkConfig sdkConfiguration) *Auth {
+	return &Auth{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // Register
-func (s *auth) Register(ctx context.Context, request operations.RegisterRequest, opts ...operations.Option) (*operations.RegisterResponse, error) {
+func (s *Auth) Register(ctx context.Context, request operations.RegisterRequest, opts ...operations.Option) (*operations.RegisterResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -103,7 +103,7 @@ func (s *auth) Register(ctx context.Context, request operations.RegisterRequest,
 }
 
 // Login - login
-func (s *auth) Login(ctx context.Context, request *operations.LoginRequestBody, opts ...operations.Option) (*operations.LoginResponse, error) {
+func (s *Auth) Login(ctx context.Context, request *operations.LoginRequestBody, opts ...operations.Option) (*operations.LoginResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
