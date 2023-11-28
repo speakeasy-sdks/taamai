@@ -41,11 +41,11 @@ Add and remove from fav Document
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -71,17 +71,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                          | :heavy_check_mark:                                                                                             | The context to use for the request.                                                                            |
-| `request`                                                                                                      | [operations.AddandremovefromfavDocumentRequest](../../models/operations/addandremovefromfavdocumentrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `opts`                                                                                                         | [][operations.Option](../../models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                              | :heavy_check_mark:                                                                                                 | The context to use for the request.                                                                                |
+| `request`                                                                                                          | [operations.AddandremovefromfavDocumentRequest](../../pkg/models/operations/addandremovefromfavdocumentrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `opts`                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                                 | The options for this request.                                                                                      |
 
 
 ### Response
 
-**[*operations.AddandremovefromfavDocumentResponse](../../models/operations/addandremovefromfavdocumentresponse.md), error**
-
+**[*operations.AddandremovefromfavDocumentResponse](../../pkg/models/operations/addandremovefromfavdocumentresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Contentsinworkbook
 
@@ -93,11 +95,11 @@ Contents in work book
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -123,17 +125,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
-| `request`                                                                                    | [operations.ContentsinworkbookRequest](../../models/operations/contentsinworkbookrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
+| `request`                                                                                        | [operations.ContentsinworkbookRequest](../../pkg/models/operations/contentsinworkbookrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `opts`                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                     | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
 
 ### Response
 
-**[*operations.ContentsinworkbookResponse](../../models/operations/contentsinworkbookresponse.md), error**
-
+**[*operations.ContentsinworkbookResponse](../../pkg/models/operations/contentsinworkbookresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## CreateFolder
 
@@ -145,11 +149,11 @@ Create Folder
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -175,17 +179,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.CreateFolderRequest](../../models/operations/createfolderrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.CreateFolderRequest](../../pkg/models/operations/createfolderrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `opts`                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                         | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
 
 
 ### Response
 
-**[*operations.CreateFolderResponse](../../models/operations/createfolderresponse.md), error**
-
+**[*operations.CreateFolderResponse](../../pkg/models/operations/createfolderresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## CreateWorkbook
 
@@ -197,11 +203,11 @@ Create Workbook
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -226,17 +232,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.CreateWorkbookRequest](../../models/operations/createworkbookrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.CreateWorkbookRequest](../../pkg/models/operations/createworkbookrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `opts`                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                             | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 
 ### Response
 
-**[*operations.CreateWorkbookResponse](../../models/operations/createworkbookresponse.md), error**
-
+**[*operations.CreateWorkbookResponse](../../pkg/models/operations/createworkbookresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## DeleteWorkspace
 
@@ -248,11 +256,11 @@ Delete Workspace
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -277,17 +285,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.DeleteWorkspaceRequest](../../models/operations/deleteworkspacerequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `request`                                                                                  | [operations.DeleteWorkspaceRequest](../../pkg/models/operations/deleteworkspacerequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `opts`                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                               | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
 
 
 ### Response
 
-**[*operations.DeleteWorkspaceResponse](../../models/operations/deleteworkspaceresponse.md), error**
-
+**[*operations.DeleteWorkspaceResponse](../../pkg/models/operations/deleteworkspaceresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Deleteallkindofdocuments
 
@@ -299,10 +309,10 @@ Delete all kind of documents
 package main
 
 import(
+	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/taamai"
-	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
 )
 
 func main() {
@@ -324,16 +334,18 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |
-| `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
+| `opts`                                                       | [][operations.Option](../../pkg/models/operations/option.md) | :heavy_minus_sign:                                           | The options for this request.                                |
 
 
 ### Response
 
-**[*operations.DeleteallkindofdocumentsResponse](../../models/operations/deleteallkindofdocumentsresponse.md), error**
-
+**[*operations.DeleteallkindofdocumentsResponse](../../pkg/models/operations/deleteallkindofdocumentsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Joinworkbook
 
@@ -345,11 +357,11 @@ Join workbook
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -374,17 +386,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.JoinworkbookRequest](../../models/operations/joinworkbookrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.JoinworkbookRequest](../../pkg/models/operations/joinworkbookrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `opts`                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                         | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
 
 
 ### Response
 
-**[*operations.JoinworkbookResponse](../../models/operations/joinworkbookresponse.md), error**
-
+**[*operations.JoinworkbookResponse](../../pkg/models/operations/joinworkbookresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Joinworkbookrequestr
 
@@ -396,11 +410,11 @@ Join workbook requestr
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -426,17 +440,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
-| `request`                                                                                        | [operations.JoinworkbookrequestrRequest](../../models/operations/joinworkbookrequestrrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `opts`                                                                                           | [][operations.Option](../../models/operations/option.md)                                         | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
+| `request`                                                                                            | [operations.JoinworkbookrequestrRequest](../../pkg/models/operations/joinworkbookrequestrrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `opts`                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                         | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
 
 
 ### Response
 
-**[*operations.JoinworkbookrequestrResponse](../../models/operations/joinworkbookrequestrresponse.md), error**
-
+**[*operations.JoinworkbookrequestrResponse](../../pkg/models/operations/joinworkbookrequestrresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PermanentDeletefolder
 
@@ -448,11 +464,12 @@ Permanent Delete folder
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -477,17 +494,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
-| `request`                                                                                          | [operations.PermanentDeletefolderRequest](../../models/operations/permanentdeletefolderrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
+| `request`                                                                                              | [operations.PermanentDeletefolderRequest](../../pkg/models/operations/permanentdeletefolderrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `opts`                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                           | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
 
 
 ### Response
 
-**[*operations.PermanentDeletefolderResponse](../../models/operations/permanentdeletefolderresponse.md), error**
-
+**[*operations.PermanentDeletefolderResponse](../../pkg/models/operations/permanentdeletefolderresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PermanentDeleteworkspace
 
@@ -499,10 +518,10 @@ Permanent Delete workspace
 package main
 
 import(
+	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/taamai"
-	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
 )
 
 func main() {
@@ -531,8 +550,10 @@ func main() {
 
 ### Response
 
-**[*operations.PermanentDeleteworkspaceResponse](../../models/operations/permanentdeleteworkspaceresponse.md), error**
-
+**[*operations.PermanentDeleteworkspaceResponse](../../pkg/models/operations/permanentdeleteworkspaceresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RejectWorkbook
 
@@ -544,11 +565,11 @@ Reject Workbook
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -573,17 +594,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.RejectWorkbookRequest](../../models/operations/rejectworkbookrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.RejectWorkbookRequest](../../pkg/models/operations/rejectworkbookrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `opts`                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                             | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 
 ### Response
 
-**[*operations.RejectWorkbookResponse](../../models/operations/rejectworkbookresponse.md), error**
-
+**[*operations.RejectWorkbookResponse](../../pkg/models/operations/rejectworkbookresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCode
 
@@ -595,11 +618,11 @@ Restore Docuemnt of all type  (content.voiceover,images,transcript,code)
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -625,17 +648,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                                                        | Type                                                                                                                                                                             | Required                                                                                                                                                                         | Description                                                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                            | :heavy_check_mark:                                                                                                                                                               | The context to use for the request.                                                                                                                                              |
-| `request`                                                                                                                                                                        | [operations.RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeRequest](../../models/operations/restoredocuemntofalltypecontentvoiceoverimagestranscriptcoderequest.md) | :heavy_check_mark:                                                                                                                                                               | The request object to use for the request.                                                                                                                                       |
-| `opts`                                                                                                                                                                           | [][operations.Option](../../models/operations/option.md)                                                                                                                         | :heavy_minus_sign:                                                                                                                                                               | The options for this request.                                                                                                                                                    |
+| Parameter                                                                                                                                                                            | Type                                                                                                                                                                                 | Required                                                                                                                                                                             | Description                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                | :heavy_check_mark:                                                                                                                                                                   | The context to use for the request.                                                                                                                                                  |
+| `request`                                                                                                                                                                            | [operations.RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeRequest](../../pkg/models/operations/restoredocuemntofalltypecontentvoiceoverimagestranscriptcoderequest.md) | :heavy_check_mark:                                                                                                                                                                   | The request object to use for the request.                                                                                                                                           |
+| `opts`                                                                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                   | The options for this request.                                                                                                                                                        |
 
 
 ### Response
 
-**[*operations.RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse](../../models/operations/restoredocuemntofalltypecontentvoiceoverimagestranscriptcoderesponse.md), error**
-
+**[*operations.RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse](../../pkg/models/operations/restoredocuemntofalltypecontentvoiceoverimagestranscriptcoderesponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RestoreWorkspace
 
@@ -647,11 +672,11 @@ Restore Workspace
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -676,17 +701,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [operations.RestoreWorkspaceRequest](../../models/operations/restoreworkspacerequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.RestoreWorkspaceRequest](../../pkg/models/operations/restoreworkspacerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `opts`                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                 | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 
 ### Response
 
-**[*operations.RestoreWorkspaceResponse](../../models/operations/restoreworkspaceresponse.md), error**
-
+**[*operations.RestoreWorkspaceResponse](../../pkg/models/operations/restoreworkspaceresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Setdefualtworkspace
 
@@ -698,11 +725,12 @@ Set defualt workspace
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -727,17 +755,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `request`                                                                                      | [operations.SetdefualtworkspaceRequest](../../models/operations/setdefualtworkspacerequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.SetdefualtworkspaceRequest](../../pkg/models/operations/setdefualtworkspacerequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                       | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 
 ### Response
 
-**[*operations.SetdefualtworkspaceResponse](../../models/operations/setdefualtworkspaceresponse.md), error**
-
+**[*operations.SetdefualtworkspaceResponse](../../pkg/models/operations/setdefualtworkspaceresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Trashedfolders
 
@@ -749,11 +779,11 @@ Trashed folders
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -778,17 +808,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.TrashedfoldersRequest](../../models/operations/trashedfoldersrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.TrashedfoldersRequest](../../pkg/models/operations/trashedfoldersrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `opts`                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                             | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 
 ### Response
 
-**[*operations.TrashedfoldersResponse](../../models/operations/trashedfoldersresponse.md), error**
-
+**[*operations.TrashedfoldersResponse](../../pkg/models/operations/trashedfoldersresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Trashedworkspaces
 
@@ -800,11 +832,11 @@ Trashed workspaces
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -828,17 +860,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
-| `request`                                                                                  | [operations.TrashedworkspacesRequest](../../models/operations/trashedworkspacesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `request`                                                                                      | [operations.TrashedworkspacesRequest](../../pkg/models/operations/trashedworkspacesrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `opts`                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                   | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
 
 
 ### Response
 
-**[*operations.TrashedworkspacesResponse](../../models/operations/trashedworkspacesresponse.md), error**
-
+**[*operations.TrashedworkspacesResponse](../../pkg/models/operations/trashedworkspacesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## WorkbookDetail
 
@@ -850,11 +884,11 @@ Workbook Detail
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -879,17 +913,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.WorkbookDetailRequest](../../models/operations/workbookdetailrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.WorkbookDetailRequest](../../pkg/models/operations/workbookdetailrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `opts`                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                             | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 
 ### Response
 
-**[*operations.WorkbookDetailResponse](../../models/operations/workbookdetailresponse.md), error**
-
+**[*operations.WorkbookDetailResponse](../../pkg/models/operations/workbookdetailresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbookvoiceovers
 
@@ -901,11 +937,11 @@ Workbook voiceovers
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -932,17 +968,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
-| `request`                                                                                    | [operations.WorkbookvoiceoversRequest](../../models/operations/workbookvoiceoversrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
+| `request`                                                                                        | [operations.WorkbookvoiceoversRequest](../../pkg/models/operations/workbookvoiceoversrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `opts`                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                     | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
 
 ### Response
 
-**[*operations.WorkbookvoiceoversResponse](../../models/operations/workbookvoiceoversresponse.md), error**
-
+**[*operations.WorkbookvoiceoversResponse](../../pkg/models/operations/workbookvoiceoversresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Allworkbooks
 
@@ -954,11 +992,11 @@ all workbooks
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -982,17 +1020,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.AllworkbooksRequest](../../models/operations/allworkbooksrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.AllworkbooksRequest](../../pkg/models/operations/allworkbooksrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `opts`                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                         | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
 
 
 ### Response
 
-**[*operations.AllworkbooksResponse](../../models/operations/allworkbooksresponse.md), error**
-
+**[*operations.AllworkbooksResponse](../../pkg/models/operations/allworkbooksresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Deletefolder
 
@@ -1004,11 +1044,11 @@ delete folder
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -1033,17 +1073,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.DeletefolderRequest](../../models/operations/deletefolderrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.DeletefolderRequest](../../pkg/models/operations/deletefolderrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `opts`                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                         | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
 
 
 ### Response
 
-**[*operations.DeletefolderResponse](../../models/operations/deletefolderresponse.md), error**
-
+**[*operations.DeletefolderResponse](../../pkg/models/operations/deletefolderresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## PermanentDeletedocument
 
@@ -1055,11 +1097,11 @@ permanent Delete document
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -1085,17 +1127,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
-| `request`                                                                                              | [operations.PermanentDeletedocumentRequest](../../models/operations/permanentdeletedocumentrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `opts`                                                                                                 | [][operations.Option](../../models/operations/option.md)                                               | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
+| `request`                                                                                                  | [operations.PermanentDeletedocumentRequest](../../pkg/models/operations/permanentdeletedocumentrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `opts`                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                               | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
 
 
 ### Response
 
-**[*operations.PermanentDeletedocumentResponse](../../models/operations/permanentdeletedocumentresponse.md), error**
-
+**[*operations.PermanentDeletedocumentResponse](../../pkg/models/operations/permanentdeletedocumentresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Restorefolder
 
@@ -1107,11 +1151,12 @@ restore folder
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -1136,17 +1181,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.RestorefolderRequest](../../models/operations/restorefolderrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `opts`                                                                             | [][operations.Option](../../models/operations/option.md)                           | :heavy_minus_sign:                                                                 | The options for this request.                                                      |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.RestorefolderRequest](../../pkg/models/operations/restorefolderrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                           | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 
 ### Response
 
-**[*operations.RestorefolderResponse](../../models/operations/restorefolderresponse.md), error**
-
+**[*operations.RestorefolderResponse](../../pkg/models/operations/restorefolderresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Userchats
 
@@ -1158,11 +1205,11 @@ user chats
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -1187,17 +1234,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
-| `request`                                                                  | [operations.UserchatsRequest](../../models/operations/userchatsrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `opts`                                                                     | [][operations.Option](../../models/operations/option.md)                   | :heavy_minus_sign:                                                         | The options for this request.                                              |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [operations.UserchatsRequest](../../pkg/models/operations/userchatsrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `opts`                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                   | :heavy_minus_sign:                                                             | The options for this request.                                                  |
 
 
 ### Response
 
-**[*operations.UserchatsResponse](../../models/operations/userchatsresponse.md), error**
-
+**[*operations.UserchatsResponse](../../pkg/models/operations/userchatsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbookcodes
 
@@ -1209,11 +1258,11 @@ workbook codes
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -1240,17 +1289,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.WorkbookcodesRequest](../../models/operations/workbookcodesrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `opts`                                                                             | [][operations.Option](../../models/operations/option.md)                           | :heavy_minus_sign:                                                                 | The options for this request.                                                      |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.WorkbookcodesRequest](../../pkg/models/operations/workbookcodesrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                           | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 
 ### Response
 
-**[*operations.WorkbookcodesResponse](../../models/operations/workbookcodesresponse.md), error**
-
+**[*operations.WorkbookcodesResponse](../../pkg/models/operations/workbookcodesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbookimages
 
@@ -1262,11 +1313,11 @@ workbook images
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -1293,17 +1344,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.WorkbookimagesRequest](../../models/operations/workbookimagesrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.WorkbookimagesRequest](../../pkg/models/operations/workbookimagesrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `opts`                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                             | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 
 ### Response
 
-**[*operations.WorkbookimagesResponse](../../models/operations/workbookimagesresponse.md), error**
-
+**[*operations.WorkbookimagesResponse](../../pkg/models/operations/workbookimagesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbookpolicies
 
@@ -1315,11 +1368,11 @@ workbook policies
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -1344,17 +1397,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [operations.WorkbookpoliciesRequest](../../models/operations/workbookpoliciesrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `opts`                                                                                   | [][operations.Option](../../models/operations/option.md)                                 | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.WorkbookpoliciesRequest](../../pkg/models/operations/workbookpoliciesrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `opts`                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                 | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 
 ### Response
 
-**[*operations.WorkbookpoliciesResponse](../../models/operations/workbookpoliciesresponse.md), error**
-
+**[*operations.WorkbookpoliciesResponse](../../pkg/models/operations/workbookpoliciesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Workbooktranscripts
 
@@ -1366,11 +1421,11 @@ workbook transcripts
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -1397,14 +1452,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `request`                                                                                      | [operations.WorkbooktranscriptsRequest](../../models/operations/workbooktranscriptsrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.WorkbooktranscriptsRequest](../../pkg/models/operations/workbooktranscriptsrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                       | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 
 ### Response
 
-**[*operations.WorkbooktranscriptsResponse](../../models/operations/workbooktranscriptsresponse.md), error**
-
+**[*operations.WorkbooktranscriptsResponse](../../pkg/models/operations/workbooktranscriptsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
