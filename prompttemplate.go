@@ -14,18 +14,18 @@ import (
 	"strings"
 )
 
-type promptTemplate struct {
+type PromptTemplate struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newPromptTemplate(sdkConfig sdkConfiguration) *promptTemplate {
-	return &promptTemplate{
+func newPromptTemplate(sdkConfig sdkConfiguration) *PromptTemplate {
+	return &PromptTemplate{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // Addandremovefrombookmarkprompttemplate - Add and remove from bookmark prompt template
-func (s *promptTemplate) Addandremovefrombookmarkprompttemplate(ctx context.Context, request operations.AddandremovefrombookmarkprompttemplateRequest, opts ...operations.Option) (*operations.AddandremovefrombookmarkprompttemplateResponse, error) {
+func (s *PromptTemplate) Addandremovefrombookmarkprompttemplate(ctx context.Context, request operations.AddandremovefrombookmarkprompttemplateRequest, opts ...operations.Option) (*operations.AddandremovefrombookmarkprompttemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -103,7 +103,7 @@ func (s *promptTemplate) Addandremovefrombookmarkprompttemplate(ctx context.Cont
 }
 
 // CreatePromptTemplate - Create Prompt Template
-func (s *promptTemplate) CreatePromptTemplate(ctx context.Context, request operations.CreatePromptTemplateRequest, opts ...operations.Option) (*operations.CreatePromptTemplateResponse, error) {
+func (s *PromptTemplate) CreatePromptTemplate(ctx context.Context, request operations.CreatePromptTemplateRequest, opts ...operations.Option) (*operations.CreatePromptTemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -181,7 +181,7 @@ func (s *promptTemplate) CreatePromptTemplate(ctx context.Context, request opera
 }
 
 // Generateprompttemplate - Generate prompt template
-func (s *promptTemplate) Generateprompttemplate(ctx context.Context, request operations.GenerateprompttemplateRequest, opts ...operations.Option) (*operations.GenerateprompttemplateResponse, error) {
+func (s *PromptTemplate) Generateprompttemplate(ctx context.Context, request operations.GenerateprompttemplateRequest, opts ...operations.Option) (*operations.GenerateprompttemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -259,7 +259,7 @@ func (s *promptTemplate) Generateprompttemplate(ctx context.Context, request ope
 }
 
 // ParmanentDeletePrompttemplate - Parmanent Delete Prompt template
-func (s *promptTemplate) ParmanentDeletePrompttemplate(ctx context.Context, request operations.ParmanentDeletePrompttemplateRequest, opts ...operations.Option) (*operations.ParmanentDeletePrompttemplateResponse, error) {
+func (s *PromptTemplate) ParmanentDeletePrompttemplate(ctx context.Context, request operations.ParmanentDeletePrompttemplateRequest, opts ...operations.Option) (*operations.ParmanentDeletePrompttemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -337,7 +337,7 @@ func (s *promptTemplate) ParmanentDeletePrompttemplate(ctx context.Context, requ
 }
 
 // PromptTemplates - Prompt Templates
-func (s *promptTemplate) PromptTemplates(ctx context.Context, request operations.PromptTemplatesRequest, opts ...operations.Option) (*operations.PromptTemplatesResponse, error) {
+func (s *PromptTemplate) PromptTemplates(ctx context.Context, request operations.PromptTemplatesRequest, opts ...operations.Option) (*operations.PromptTemplatesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -415,7 +415,7 @@ func (s *promptTemplate) PromptTemplates(ctx context.Context, request operations
 }
 
 // RestorePromptTemplate - Restore Prompt Template
-func (s *promptTemplate) RestorePromptTemplate(ctx context.Context, request operations.RestorePromptTemplateRequest, opts ...operations.Option) (*operations.RestorePromptTemplateResponse, error) {
+func (s *PromptTemplate) RestorePromptTemplate(ctx context.Context, request operations.RestorePromptTemplateRequest, opts ...operations.Option) (*operations.RestorePromptTemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -493,7 +493,7 @@ func (s *promptTemplate) RestorePromptTemplate(ctx context.Context, request oper
 }
 
 // TrashedPromptTemplates - Trashed Prompt Templates
-func (s *promptTemplate) TrashedPromptTemplates(ctx context.Context, request operations.TrashedPromptTemplatesRequest, opts ...operations.Option) (*operations.TrashedPromptTemplatesResponse, error) {
+func (s *PromptTemplate) TrashedPromptTemplates(ctx context.Context, request operations.TrashedPromptTemplatesRequest, opts ...operations.Option) (*operations.TrashedPromptTemplatesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -571,7 +571,7 @@ func (s *promptTemplate) TrashedPromptTemplates(ctx context.Context, request ope
 }
 
 // Deleteprmopttemplate - delete prmopt template
-func (s *promptTemplate) Deleteprmopttemplate(ctx context.Context, request operations.DeleteprmopttemplateRequest, opts ...operations.Option) (*operations.DeleteprmopttemplateResponse, error) {
+func (s *PromptTemplate) Deleteprmopttemplate(ctx context.Context, request operations.DeleteprmopttemplateRequest, opts ...operations.Option) (*operations.DeleteprmopttemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -649,7 +649,7 @@ func (s *promptTemplate) Deleteprmopttemplate(ctx context.Context, request opera
 }
 
 // Prompttemplatelikeorremovefromlike - prompt template like or remove from like
-func (s *promptTemplate) Prompttemplatelikeorremovefromlike(ctx context.Context, request operations.PrompttemplatelikeorremovefromlikeRequest, opts ...operations.Option) (*operations.PrompttemplatelikeorremovefromlikeResponse, error) {
+func (s *PromptTemplate) Prompttemplatelikeorremovefromlike(ctx context.Context, request operations.PrompttemplatelikeorremovefromlikeRequest, opts ...operations.Option) (*operations.PrompttemplatelikeorremovefromlikeResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
