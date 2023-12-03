@@ -2,30 +2,38 @@ configVersion: 1.0.0
 management:
   docChecksum: e68b021f45280da7f9b8c19469821a11
   docVersion: "1.0"
-  speakeasyVersion: 1.104.0
-  generationVersion: 2.169.0
+  speakeasyVersion: 1.124.3
+  generationVersion: 2.207.1
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
-  repoURL: https://github.com/speakeasy-sdks/taamai.git
+  comments: {}
   sdkClassName: taamai
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
+  repoURL: https://github.com/speakeasy-sdks/taamai.git
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  baseServerURL: ""
 features:
   go:
-    core: 2.94.0
+    core: 3.1.5
     globalSecurity: 2.82.2
-    globalServerURLs: 2.82.0
-    methodServerURLs: 2.82.0
-    unions: 2.84.0
+    globalServerURLs: 2.82.1
+    methodServerURLs: 2.82.1
+    unions: 2.85.0
 go:
-  version: 0.2.0
+  version: 0.3.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: pkg/models/callbacks
+      errors: pkg/models/sdkerrors
+      operations: pkg/models/operations
+      shared: pkg/models/shared
+      webhooks: pkg/models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/speakeasy-sdks/taamai
   maxMethodParams: 0
+  outputModelSuffix: output
   packageName: github.com/speakeasy-sdks/taamai
   published: true
   repoSubDirectory: .
