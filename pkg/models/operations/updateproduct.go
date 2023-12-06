@@ -110,7 +110,7 @@ func (o *UpdateProductResponse) GetContentType() string {
 
 func (o *UpdateProductResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
