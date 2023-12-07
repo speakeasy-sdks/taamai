@@ -21,11 +21,11 @@ Create Product
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -55,17 +55,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
-| `request`                                                                                  | [operations.CreateProductRequestBody](../../models/operations/createproductrequestbody.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `opts`                                                                                     | [][operations.Option](../../models/operations/option.md)                                   | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `request`                                                                                      | [operations.CreateProductRequestBody](../../pkg/models/operations/createproductrequestbody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `opts`                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                   | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
 
 
 ### Response
 
-**[*operations.CreateProductResponse](../../models/operations/createproductresponse.md), error**
-
+**[*operations.CreateProductResponse](../../pkg/models/operations/createproductresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## DeleteProduct
 
@@ -77,11 +79,11 @@ Delete Product
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -106,17 +108,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.DeleteProductRequest](../../models/operations/deleteproductrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `opts`                                                                             | [][operations.Option](../../models/operations/option.md)                           | :heavy_minus_sign:                                                                 | The options for this request.                                                      |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.DeleteProductRequest](../../pkg/models/operations/deleteproductrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                           | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 
 ### Response
 
-**[*operations.DeleteProductResponse](../../models/operations/deleteproductresponse.md), error**
-
+**[*operations.DeleteProductResponse](../../pkg/models/operations/deleteproductresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## RestoreProduct
 
@@ -128,11 +132,11 @@ Restore Product
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -157,17 +161,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.RestoreProductRequest](../../models/operations/restoreproductrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.RestoreProductRequest](../../pkg/models/operations/restoreproductrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `opts`                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                             | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 
 ### Response
 
-**[*operations.RestoreProductResponse](../../models/operations/restoreproductresponse.md), error**
-
+**[*operations.RestoreProductResponse](../../pkg/models/operations/restoreproductresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## TrashedProducts
 
@@ -179,11 +185,11 @@ Trashed Products
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -207,17 +213,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.TrashedProductsRequest](../../models/operations/trashedproductsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `request`                                                                                  | [operations.TrashedProductsRequest](../../pkg/models/operations/trashedproductsrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `opts`                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                               | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
 
 
 ### Response
 
-**[*operations.TrashedProductsResponse](../../models/operations/trashedproductsresponse.md), error**
-
+**[*operations.TrashedProductsResponse](../../pkg/models/operations/trashedproductsresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## UpdateProduct
 
@@ -229,11 +237,11 @@ Update Product
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -263,17 +271,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `ctx`                                                                              | [context.Context](https://pkg.go.dev/context#Context)                              | :heavy_check_mark:                                                                 | The context to use for the request.                                                |
-| `request`                                                                          | [operations.UpdateProductRequest](../../models/operations/updateproductrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `opts`                                                                             | [][operations.Option](../../models/operations/option.md)                           | :heavy_minus_sign:                                                                 | The options for this request.                                                      |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.UpdateProductRequest](../../pkg/models/operations/updateproductrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                           | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
 
 ### Response
 
-**[*operations.UpdateProductResponse](../../models/operations/updateproductresponse.md), error**
-
+**[*operations.UpdateProductResponse](../../pkg/models/operations/updateproductresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## UserProductd
 
@@ -285,11 +295,11 @@ User Productd
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -313,17 +323,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.UserProductdRequest](../../models/operations/userproductdrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.UserProductdRequest](../../pkg/models/operations/userproductdrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `opts`                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                         | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
 
 
 ### Response
 
-**[*operations.UserProductdResponse](../../models/operations/userproductdresponse.md), error**
-
+**[*operations.UserProductdResponse](../../pkg/models/operations/userproductdresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## ParmenentdeleteProduct
 
@@ -335,11 +347,11 @@ parmenent delete Product
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -364,14 +376,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
-| `request`                                                                                            | [operations.ParmenentdeleteProductRequest](../../models/operations/parmenentdeleteproductrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.ParmenentdeleteProductRequest](../../pkg/models/operations/parmenentdeleteproductrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                             | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
 
 ### Response
 
-**[*operations.ParmenentdeleteProductResponse](../../models/operations/parmenentdeleteproductresponse.md), error**
-
+**[*operations.ParmenentdeleteProductResponse](../../pkg/models/operations/parmenentdeleteproductresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
