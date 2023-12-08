@@ -16,11 +16,11 @@ Register
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -48,17 +48,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `ctx`                                                                    | [context.Context](https://pkg.go.dev/context#Context)                    | :heavy_check_mark:                                                       | The context to use for the request.                                      |
-| `request`                                                                | [operations.RegisterRequest](../../models/operations/registerrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
-| `opts`                                                                   | [][operations.Option](../../models/operations/option.md)                 | :heavy_minus_sign:                                                       | The options for this request.                                            |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
+| `request`                                                                    | [operations.RegisterRequest](../../pkg/models/operations/registerrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| `opts`                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                 | :heavy_minus_sign:                                                           | The options for this request.                                                |
 
 
 ### Response
 
-**[*operations.RegisterResponse](../../models/operations/registerresponse.md), error**
-
+**[*operations.RegisterResponse](../../pkg/models/operations/registerresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## Login
 
@@ -70,11 +72,11 @@ login
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -99,14 +101,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `ctx`                                                                      | [context.Context](https://pkg.go.dev/context#Context)                      | :heavy_check_mark:                                                         | The context to use for the request.                                        |
-| `request`                                                                  | [operations.LoginRequestBody](../../models/operations/loginrequestbody.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `opts`                                                                     | [][operations.Option](../../models/operations/option.md)                   | :heavy_minus_sign:                                                         | The options for this request.                                              |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [operations.LoginRequestBody](../../pkg/models/operations/loginrequestbody.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `opts`                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                   | :heavy_minus_sign:                                                             | The options for this request.                                                  |
 
 
 ### Response
 
-**[*operations.LoginResponse](../../models/operations/loginresponse.md), error**
-
+**[*operations.LoginResponse](../../pkg/models/operations/loginresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
