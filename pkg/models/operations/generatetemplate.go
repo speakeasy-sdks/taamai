@@ -165,7 +165,7 @@ func (o *GenerateTemplateResponse) GetGenerateTemplate() *GenerateTemplateGenera
 
 func (o *GenerateTemplateResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
