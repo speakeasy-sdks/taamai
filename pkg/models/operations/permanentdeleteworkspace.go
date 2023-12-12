@@ -47,7 +47,7 @@ func (o *PermanentDeleteworkspaceResponse) GetContentType() string {
 
 func (o *PermanentDeleteworkspaceResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
