@@ -71,7 +71,7 @@ func (o *TrashedworkspacesResponse) GetContentType() string {
 
 func (o *TrashedworkspacesResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
