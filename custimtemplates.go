@@ -14,18 +14,18 @@ import (
 	"strings"
 )
 
-type custimTemplates struct {
+type CustimTemplates struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newCustimTemplates(sdkConfig sdkConfiguration) *custimTemplates {
-	return &custimTemplates{
+func newCustimTemplates(sdkConfig sdkConfiguration) *CustimTemplates {
+	return &CustimTemplates{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateCustomTemplate - Create Custom Template
-func (s *custimTemplates) CreateCustomTemplate(ctx context.Context) (*operations.CreateCustomTemplateResponse, error) {
+func (s *CustimTemplates) CreateCustomTemplate(ctx context.Context) (*operations.CreateCustomTemplateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/"
 
@@ -85,7 +85,7 @@ func (s *custimTemplates) CreateCustomTemplate(ctx context.Context) (*operations
 }
 
 // CustomTemplategenerate - Custom Template generate
-func (s *custimTemplates) CustomTemplategenerate(ctx context.Context, request operations.CustomTemplategenerateRequest, opts ...operations.Option) (*operations.CustomTemplategenerateResponse, error) {
+func (s *CustimTemplates) CustomTemplategenerate(ctx context.Context, request operations.CustomTemplategenerateRequest, opts ...operations.Option) (*operations.CustomTemplategenerateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -163,7 +163,7 @@ func (s *custimTemplates) CustomTemplategenerate(ctx context.Context, request op
 }
 
 // CustomTemplates - Custom Templates
-func (s *custimTemplates) CustomTemplates(ctx context.Context, request operations.CustomTemplatesRequest, opts ...operations.Option) (*operations.CustomTemplatesResponse, error) {
+func (s *CustimTemplates) CustomTemplates(ctx context.Context, request operations.CustomTemplatesRequest, opts ...operations.Option) (*operations.CustomTemplatesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -228,7 +228,7 @@ func (s *custimTemplates) CustomTemplates(ctx context.Context, request operation
 }
 
 // DeleteCustomtemplate - Delete Custom template
-func (s *custimTemplates) DeleteCustomtemplate(ctx context.Context, request operations.DeleteCustomtemplateRequest, opts ...operations.Option) (*operations.DeleteCustomtemplateResponse, error) {
+func (s *CustimTemplates) DeleteCustomtemplate(ctx context.Context, request operations.DeleteCustomtemplateRequest, opts ...operations.Option) (*operations.DeleteCustomtemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -306,7 +306,7 @@ func (s *custimTemplates) DeleteCustomtemplate(ctx context.Context, request oper
 }
 
 // FavCustomTemplates - Fav Custom Templates
-func (s *custimTemplates) FavCustomTemplates(ctx context.Context, request operations.FavCustomTemplatesRequest, opts ...operations.Option) (*operations.FavCustomTemplatesResponse, error) {
+func (s *CustimTemplates) FavCustomTemplates(ctx context.Context, request operations.FavCustomTemplatesRequest, opts ...operations.Option) (*operations.FavCustomTemplatesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -371,7 +371,7 @@ func (s *custimTemplates) FavCustomTemplates(ctx context.Context, request operat
 }
 
 // RestoreCustomtemplate - Restore Custom template
-func (s *custimTemplates) RestoreCustomtemplate(ctx context.Context, request operations.RestoreCustomtemplateRequest, opts ...operations.Option) (*operations.RestoreCustomtemplateResponse, error) {
+func (s *CustimTemplates) RestoreCustomtemplate(ctx context.Context, request operations.RestoreCustomtemplateRequest, opts ...operations.Option) (*operations.RestoreCustomtemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -449,7 +449,7 @@ func (s *custimTemplates) RestoreCustomtemplate(ctx context.Context, request ope
 }
 
 // TrashedCustomTemplates - Trashed Custom Templates
-func (s *custimTemplates) TrashedCustomTemplates(ctx context.Context, request operations.TrashedCustomTemplatesRequest, opts ...operations.Option) (*operations.TrashedCustomTemplatesResponse, error) {
+func (s *CustimTemplates) TrashedCustomTemplates(ctx context.Context, request operations.TrashedCustomTemplatesRequest, opts ...operations.Option) (*operations.TrashedCustomTemplatesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
