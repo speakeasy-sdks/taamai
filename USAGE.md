@@ -1,6 +1,4 @@
-<!-- Start SDK Example Usage -->
-
-
+<!-- Start SDK Example Usage [usage] -->
 ```go
 package main
 
@@ -14,24 +12,23 @@ import (
 
 func main() {
 	s := taamai.New(
-		taamai.WithSecurity(""),
+		taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 
 	ctx := context.Background()
-	res, err := s.AddonFeatures.GenerateCode(ctx, operations.GenerateCodeRequest{
-		Document:     "new checking",
-		Instructions: "generate a code to store image",
-		Language:     "php",
-		UserID:       1,
+	res, err := s.WorkbookAndFolders.AddandremovefromfavDocument(ctx, operations.AddandremovefromfavDocumentRequest{
+		ID:     6,
+		Type:   "document",
+		UserID: 1,
 	})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.GenerateCode != nil {
+	if res.AddandremovefromfavDocument != nil {
 		// handle response
 	}
 }
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

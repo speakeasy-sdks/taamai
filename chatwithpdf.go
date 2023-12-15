@@ -14,18 +14,18 @@ import (
 	"strings"
 )
 
-type chatWithPdf struct {
+type ChatWithPdf struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newChatWithPdf(sdkConfig sdkConfiguration) *chatWithPdf {
-	return &chatWithPdf{
+func newChatWithPdf(sdkConfig sdkConfiguration) *ChatWithPdf {
+	return &ChatWithPdf{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // NewRequest - New Request
-func (s *chatWithPdf) NewRequest(ctx context.Context, request operations.NewRequestRequest, opts ...operations.Option) (*operations.NewRequestResponse, error) {
+func (s *ChatWithPdf) NewRequest(ctx context.Context, request operations.NewRequestRequest, opts ...operations.Option) (*operations.NewRequestResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -90,7 +90,7 @@ func (s *chatWithPdf) NewRequest(ctx context.Context, request operations.NewRequ
 }
 
 // Sendandgetmsgtochatpdf - Send and get msg to chat pdf
-func (s *chatWithPdf) Sendandgetmsgtochatpdf(ctx context.Context, request *operations.SendandgetmsgtochatpdfRequestBody, opts ...operations.Option) (*operations.SendandgetmsgtochatpdfResponse, error) {
+func (s *ChatWithPdf) Sendandgetmsgtochatpdf(ctx context.Context, request *operations.SendandgetmsgtochatpdfRequestBody, opts ...operations.Option) (*operations.SendandgetmsgtochatpdfResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -158,7 +158,7 @@ func (s *chatWithPdf) Sendandgetmsgtochatpdf(ctx context.Context, request *opera
 }
 
 // Fileupload - file upload
-func (s *chatWithPdf) Fileupload(ctx context.Context, request *operations.FileuploadRequestBody, opts ...operations.Option) (*operations.FileuploadResponse, error) {
+func (s *ChatWithPdf) Fileupload(ctx context.Context, request *operations.FileuploadRequestBody, opts ...operations.Option) (*operations.FileuploadResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -226,7 +226,7 @@ func (s *chatWithPdf) Fileupload(ctx context.Context, request *operations.Fileup
 }
 
 // Pdftotext - pdf to text
-func (s *chatWithPdf) Pdftotext(ctx context.Context, request *operations.PdftotextRequestBody, opts ...operations.Option) (*operations.PdftotextResponse, error) {
+func (s *ChatWithPdf) Pdftotext(ctx context.Context, request *operations.PdftotextRequestBody, opts ...operations.Option) (*operations.PdftotextResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -294,7 +294,7 @@ func (s *chatWithPdf) Pdftotext(ctx context.Context, request *operations.Pdftote
 }
 
 // Uploadfileforchatpdf - upload file for chat pdf
-func (s *chatWithPdf) Uploadfileforchatpdf(ctx context.Context, request *operations.UploadfileforchatpdfRequestBody, opts ...operations.Option) (*operations.UploadfileforchatpdfResponse, error) {
+func (s *ChatWithPdf) Uploadfileforchatpdf(ctx context.Context, request *operations.UploadfileforchatpdfRequestBody, opts ...operations.Option) (*operations.UploadfileforchatpdfResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
