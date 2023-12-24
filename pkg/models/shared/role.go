@@ -2,27 +2,27 @@
 
 package shared
 
-type RolePivot struct {
+type Pivot struct {
 	ModelID   int    `json:"model_id"`
 	ModelType string `json:"model_type"`
 	RoleID    int    `json:"role_id"`
 }
 
-func (o *RolePivot) GetModelID() int {
+func (o *Pivot) GetModelID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ModelID
 }
 
-func (o *RolePivot) GetModelType() string {
+func (o *Pivot) GetModelType() string {
 	if o == nil {
 		return ""
 	}
 	return o.ModelType
 }
 
-func (o *RolePivot) GetRoleID() int {
+func (o *Pivot) GetRoleID() int {
 	if o == nil {
 		return 0
 	}
@@ -30,12 +30,12 @@ func (o *RolePivot) GetRoleID() int {
 }
 
 type Role struct {
-	CreatedAt string    `json:"created_at"`
-	GuardName string    `json:"guard_name"`
-	ID        int       `json:"id"`
-	Name      string    `json:"name"`
-	Pivot     RolePivot `json:"pivot"`
-	UpdatedAt string    `json:"updated_at"`
+	CreatedAt string `json:"created_at"`
+	GuardName string `json:"guard_name"`
+	ID        int    `json:"id"`
+	Name      string `json:"name"`
+	Pivot     Pivot  `json:"pivot"`
+	UpdatedAt string `json:"updated_at"`
 }
 
 func (o *Role) GetCreatedAt() string {
@@ -66,9 +66,9 @@ func (o *Role) GetName() string {
 	return o.Name
 }
 
-func (o *Role) GetPivot() RolePivot {
+func (o *Role) GetPivot() Pivot {
 	if o == nil {
-		return RolePivot{}
+		return Pivot{}
 	}
 	return o.Pivot
 }
