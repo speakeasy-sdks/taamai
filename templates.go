@@ -14,18 +14,18 @@ import (
 	"strings"
 )
 
-type templates struct {
+type Templates struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newTemplates(sdkConfig sdkConfiguration) *templates {
-	return &templates{
+func newTemplates(sdkConfig sdkConfiguration) *Templates {
+	return &Templates{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // AllTemplates - All Templates
-func (s *templates) AllTemplates(ctx context.Context, request operations.AllTemplatesRequest, opts ...operations.Option) (*operations.AllTemplatesResponse, error) {
+func (s *Templates) AllTemplates(ctx context.Context, request operations.AllTemplatesRequest, opts ...operations.Option) (*operations.AllTemplatesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -103,7 +103,7 @@ func (s *templates) AllTemplates(ctx context.Context, request operations.AllTemp
 }
 
 // FavTemplates - Fav Templates
-func (s *templates) FavTemplates(ctx context.Context, request operations.FavTemplatesRequest, opts ...operations.Option) (*operations.FavTemplatesResponse, error) {
+func (s *Templates) FavTemplates(ctx context.Context, request operations.FavTemplatesRequest, opts ...operations.Option) (*operations.FavTemplatesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -168,7 +168,7 @@ func (s *templates) FavTemplates(ctx context.Context, request operations.FavTemp
 }
 
 // GenerateTemplate - Generate Template
-func (s *templates) GenerateTemplate(ctx context.Context, request operations.GenerateTemplateRequest, opts ...operations.Option) (*operations.GenerateTemplateResponse, error) {
+func (s *Templates) GenerateTemplate(ctx context.Context, request operations.GenerateTemplateRequest, opts ...operations.Option) (*operations.GenerateTemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -246,7 +246,7 @@ func (s *templates) GenerateTemplate(ctx context.Context, request operations.Gen
 }
 
 // ProcessTemplate - Process Template
-func (s *templates) ProcessTemplate(ctx context.Context, request operations.ProcessTemplateRequest, opts ...operations.Option) (*operations.ProcessTemplateResponse, error) {
+func (s *Templates) ProcessTemplate(ctx context.Context, request operations.ProcessTemplateRequest, opts ...operations.Option) (*operations.ProcessTemplateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -324,7 +324,7 @@ func (s *templates) ProcessTemplate(ctx context.Context, request operations.Proc
 }
 
 // TemplateDetail - Template Detail
-func (s *templates) TemplateDetail(ctx context.Context, request operations.TemplateDetailRequest, opts ...operations.Option) (*operations.TemplateDetailResponse, error) {
+func (s *Templates) TemplateDetail(ctx context.Context, request operations.TemplateDetailRequest, opts ...operations.Option) (*operations.TemplateDetailResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -389,7 +389,7 @@ func (s *templates) TemplateDetail(ctx context.Context, request operations.Templ
 }
 
 // Templategroups - Template groups
-func (s *templates) Templategroups(ctx context.Context, opts ...operations.Option) (*operations.TemplategroupsResponse, error) {
+func (s *Templates) Templategroups(ctx context.Context, opts ...operations.Option) (*operations.TemplategroupsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
