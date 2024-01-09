@@ -63,15 +63,15 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 }
 
 type Taamai struct {
-	AddonFeatures      *addonFeatures
-	CustimTemplates    *custimTemplates
-	Misc               *misc
-	Product            *product
-	PromptTemplate     *promptTemplate
-	Templates          *templates
-	WorkbookAndFolders *workbookAndFolders
-	Auth               *auth
-	ChatWithPdf        *chatWithPdf
+	WorkbookAndFolders *WorkbookAndFolders
+	CustimTemplates    *CustimTemplates
+	ChatWithPdf        *ChatWithPdf
+	Misc               *Misc
+	AddonFeatures      *AddonFeatures
+	Auth               *Auth
+	Product            *Product
+	PromptTemplate     *PromptTemplate
+	Templates          *Templates
 
 	sdkConfiguration sdkConfiguration
 }
@@ -121,7 +121,6 @@ func withSecurity(security interface{}) func(context.Context) (interface{}, erro
 }
 
 // WithSecurity configures the SDK to use the provided security details
-
 func WithSecurity(bearer string) SDKOption {
 	return func(sdk *Taamai) {
 		security := shared.Security{Bearer: bearer}
@@ -141,9 +140,9 @@ func New(opts ...SDKOption) *Taamai {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0",
-			SDKVersion:        "0.2.0",
-			GenVersion:        "2.169.0",
-			UserAgent:         "speakeasy-sdk/go 0.2.0 2.169.0 1.0 github.com/speakeasy-sdks/taamai",
+			SDKVersion:        "0.3.0",
+			GenVersion:        "2.230.1",
+			UserAgent:         "speakeasy-sdk/go 0.3.0 2.230.1 1.0 github.com/speakeasy-sdks/taamai",
 		},
 	}
 	for _, opt := range opts {
@@ -162,23 +161,23 @@ func New(opts ...SDKOption) *Taamai {
 		}
 	}
 
-	sdk.AddonFeatures = newAddonFeatures(sdk.sdkConfiguration)
+	sdk.WorkbookAndFolders = newWorkbookAndFolders(sdk.sdkConfiguration)
 
 	sdk.CustimTemplates = newCustimTemplates(sdk.sdkConfiguration)
 
+	sdk.ChatWithPdf = newChatWithPdf(sdk.sdkConfiguration)
+
 	sdk.Misc = newMisc(sdk.sdkConfiguration)
+
+	sdk.AddonFeatures = newAddonFeatures(sdk.sdkConfiguration)
+
+	sdk.Auth = newAuth(sdk.sdkConfiguration)
 
 	sdk.Product = newProduct(sdk.sdkConfiguration)
 
 	sdk.PromptTemplate = newPromptTemplate(sdk.sdkConfiguration)
 
 	sdk.Templates = newTemplates(sdk.sdkConfiguration)
-
-	sdk.WorkbookAndFolders = newWorkbookAndFolders(sdk.sdkConfiguration)
-
-	sdk.Auth = newAuth(sdk.sdkConfiguration)
-
-	sdk.ChatWithPdf = newChatWithPdf(sdk.sdkConfiguration)
 
 	return sdk
 }
