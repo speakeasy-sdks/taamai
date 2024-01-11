@@ -79,7 +79,7 @@ func (o *TrashedfoldersResponse) GetContentType() string {
 
 func (o *TrashedfoldersResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

@@ -21,15 +21,15 @@ Create Custom Template
 package main
 
 import(
+	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/taamai"
-	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -53,8 +53,10 @@ func main() {
 
 ### Response
 
-**[*operations.CreateCustomTemplateResponse](../../models/operations/createcustomtemplateresponse.md), error**
-
+**[*operations.CreateCustomTemplateResponse](../../pkg/models/operations/createcustomtemplateresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## CustomTemplategenerate
 
@@ -66,16 +68,16 @@ Custom Template generate
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -105,17 +107,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
-| `request`                                                                                            | [operations.CustomTemplategenerateRequest](../../models/operations/customtemplategeneraterequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.CustomTemplategenerateRequest](../../pkg/models/operations/customtemplategeneraterequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                             | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
 
 ### Response
 
-**[*operations.CustomTemplategenerateResponse](../../models/operations/customtemplategenerateresponse.md), error**
-
+**[*operations.CustomTemplategenerateResponse](../../pkg/models/operations/customtemplategenerateresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## CustomTemplates
 
@@ -127,16 +131,17 @@ Custom Templates
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -155,17 +160,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.CustomTemplatesRequest](../../models/operations/customtemplatesrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                      | :heavy_check_mark:                                                                         | The context to use for the request.                                                        |
+| `request`                                                                                  | [operations.CustomTemplatesRequest](../../pkg/models/operations/customtemplatesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `opts`                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                               | :heavy_minus_sign:                                                                         | The options for this request.                                                              |
 
 
 ### Response
 
-**[*operations.CustomTemplatesResponse](../../models/operations/customtemplatesresponse.md), error**
-
+**[*operations.CustomTemplatesResponse](../../pkg/models/operations/customtemplatesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteCustomtemplate
 
@@ -177,16 +184,16 @@ Delete Custom template
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -206,17 +213,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
-| `request`                                                                                        | [operations.DeleteCustomtemplateRequest](../../models/operations/deletecustomtemplaterequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `opts`                                                                                           | [][operations.Option](../../models/operations/option.md)                                         | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
+| `request`                                                                                            | [operations.DeleteCustomtemplateRequest](../../pkg/models/operations/deletecustomtemplaterequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `opts`                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                         | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
 
 
 ### Response
 
-**[*operations.DeleteCustomtemplateResponse](../../models/operations/deletecustomtemplateresponse.md), error**
-
+**[*operations.DeleteCustomtemplateResponse](../../pkg/models/operations/deletecustomtemplateresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## FavCustomTemplates
 
@@ -228,16 +237,17 @@ Fav Custom Templates
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
+	"net/http"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -256,17 +266,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
-| `request`                                                                                    | [operations.FavCustomTemplatesRequest](../../models/operations/favcustomtemplatesrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `opts`                                                                                       | [][operations.Option](../../models/operations/option.md)                                     | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
+| `request`                                                                                        | [operations.FavCustomTemplatesRequest](../../pkg/models/operations/favcustomtemplatesrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `opts`                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                     | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
 
 ### Response
 
-**[*operations.FavCustomTemplatesResponse](../../models/operations/favcustomtemplatesresponse.md), error**
-
+**[*operations.FavCustomTemplatesResponse](../../pkg/models/operations/favcustomtemplatesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## RestoreCustomtemplate
 
@@ -278,16 +290,16 @@ Restore Custom template
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -307,17 +319,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
-| `request`                                                                                          | [operations.RestoreCustomtemplateRequest](../../models/operations/restorecustomtemplaterequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
+| `request`                                                                                              | [operations.RestoreCustomtemplateRequest](../../pkg/models/operations/restorecustomtemplaterequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `opts`                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                           | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
 
 
 ### Response
 
-**[*operations.RestoreCustomtemplateResponse](../../models/operations/restorecustomtemplateresponse.md), error**
-
+**[*operations.RestoreCustomtemplateResponse](../../pkg/models/operations/restorecustomtemplateresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## TrashedCustomTemplates
 
@@ -329,16 +343,16 @@ Trashed Custom Templates
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -357,14 +371,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
-| `request`                                                                                            | [operations.TrashedCustomTemplatesRequest](../../models/operations/trashedcustomtemplatesrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `opts`                                                                                               | [][operations.Option](../../models/operations/option.md)                                             | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.TrashedCustomTemplatesRequest](../../pkg/models/operations/trashedcustomtemplatesrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `opts`                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                             | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
 
 ### Response
 
-**[*operations.TrashedCustomTemplatesResponse](../../models/operations/trashedcustomtemplatesresponse.md), error**
-
+**[*operations.TrashedCustomTemplatesResponse](../../pkg/models/operations/trashedcustomtemplatesresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
