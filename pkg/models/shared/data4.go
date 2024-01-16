@@ -7,76 +7,76 @@ import (
 	"github.com/speakeasy-sdks/taamai/pkg/utils"
 )
 
-type Data4WordsType string
+type WordsType string
 
 const (
-	Data4WordsTypeStr   Data4WordsType = "str"
-	Data4WordsTypeInt32 Data4WordsType = "int32"
-	Data4WordsTypeAny   Data4WordsType = "any"
+	WordsTypeStr   WordsType = "str"
+	WordsTypeInt32 WordsType = "int32"
+	WordsTypeAny   WordsType = "any"
 )
 
-type Data4Words struct {
+type Words struct {
 	Str   *string
 	Int32 *int
 	Any   interface{}
 
-	Type Data4WordsType
+	Type WordsType
 }
 
-func CreateData4WordsStr(str string) Data4Words {
-	typ := Data4WordsTypeStr
+func CreateWordsStr(str string) Words {
+	typ := WordsTypeStr
 
-	return Data4Words{
+	return Words{
 		Str:  &str,
 		Type: typ,
 	}
 }
 
-func CreateData4WordsInt32(int32T int) Data4Words {
-	typ := Data4WordsTypeInt32
+func CreateWordsInt32(int32T int) Words {
+	typ := WordsTypeInt32
 
-	return Data4Words{
+	return Words{
 		Int32: &int32T,
 		Type:  typ,
 	}
 }
 
-func CreateData4WordsAny(any interface{}) Data4Words {
-	typ := Data4WordsTypeAny
+func CreateWordsAny(any interface{}) Words {
+	typ := WordsTypeAny
 
-	return Data4Words{
-		Any:  &any,
+	return Words{
+		Any:  any,
 		Type: typ,
 	}
 }
 
-func (u *Data4Words) UnmarshalJSON(data []byte) error {
+func (u *Words) UnmarshalJSON(data []byte) error {
 
-	str := new(string)
+	str := ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = str
-		u.Type = Data4WordsTypeStr
+		u.Str = &str
+		u.Type = WordsTypeStr
 		return nil
 	}
 
-	int32Var := new(int)
+	int32Var := 0
 	if err := utils.UnmarshalJSON(data, &int32Var, "", true, true); err == nil {
-		u.Int32 = int32Var
-		u.Type = Data4WordsTypeInt32
+		u.Int32 = &int32Var
+		u.Type = WordsTypeInt32
 		return nil
 	}
 
-	any := new(interface{})
+	any := nil
 	if err := utils.UnmarshalJSON(data, &any, "", true, true); err == nil {
 		u.Any = any
-		u.Type = Data4WordsTypeAny
+		u.Type = WordsTypeAny
 		return nil
 	}
 
 	return errors.New("could not unmarshal into supported union types")
 }
 
-func (u Data4Words) MarshalJSON() ([]byte, error) {
+func (u Words) MarshalJSON() ([]byte, error) {
 	if u.Str != nil {
 		return utils.MarshalJSON(u.Str, "", true)
 	}
@@ -93,30 +93,30 @@ func (u Data4Words) MarshalJSON() ([]byte, error) {
 }
 
 type Data4 struct {
-	CreatedAt        string      `json:"created_at"`
-	DeletedAt        *string     `json:"deleted_at"`
-	Draft            int         `json:"draft"`
-	Group            string      `json:"group"`
-	Icon             string      `json:"icon"`
-	ID               int         `json:"id"`
-	InputText        *string     `json:"input_text"`
-	Language         string      `json:"language"`
-	LanguageFlag     string      `json:"language_flag"`
-	LanguageName     string      `json:"language_name"`
-	Model            *string     `json:"model"`
-	PlanType         string      `json:"plan_type"`
-	ResultText       *string     `json:"result_text"`
-	Tags             *string     `json:"tags"`
-	TemplateCode     *string     `json:"template_code"`
-	TemplateName     string      `json:"template_name"`
-	Title            *string     `json:"title"`
-	Tokens           int         `json:"tokens"`
-	UpdatedAt        string      `json:"updated_at"`
-	UserID           int         `json:"user_id"`
-	Words            *Data4Words `json:"words"`
-	Workbook         *string     `json:"workbook"`
-	WorkbookFolderID int         `json:"workbook_folder_id"`
-	WorkbookID       int         `json:"workbook_id"`
+	CreatedAt        string  `json:"created_at"`
+	DeletedAt        *string `json:"deleted_at"`
+	Draft            int     `json:"draft"`
+	Group            string  `json:"group"`
+	Icon             string  `json:"icon"`
+	ID               int     `json:"id"`
+	InputText        *string `json:"input_text"`
+	Language         string  `json:"language"`
+	LanguageFlag     string  `json:"language_flag"`
+	LanguageName     string  `json:"language_name"`
+	Model            *string `json:"model"`
+	PlanType         string  `json:"plan_type"`
+	ResultText       *string `json:"result_text"`
+	Tags             *string `json:"tags"`
+	TemplateCode     *string `json:"template_code"`
+	TemplateName     string  `json:"template_name"`
+	Title            *string `json:"title"`
+	Tokens           int     `json:"tokens"`
+	UpdatedAt        string  `json:"updated_at"`
+	UserID           int     `json:"user_id"`
+	Words            *Words  `json:"words"`
+	Workbook         *string `json:"workbook"`
+	WorkbookFolderID int     `json:"workbook_folder_id"`
+	WorkbookID       int     `json:"workbook_id"`
 }
 
 func (o *Data4) GetCreatedAt() string {
@@ -259,7 +259,7 @@ func (o *Data4) GetUserID() int {
 	return o.UserID
 }
 
-func (o *Data4) GetWords() *Data4Words {
+func (o *Data4) GetWords() *Words {
 	if o == nil {
 		return nil
 	}
