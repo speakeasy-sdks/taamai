@@ -29,7 +29,7 @@ func (o *LoginRequestBody) GetPassword() string {
 	return o.Password
 }
 
-type LoginLoginUser struct {
+type User struct {
 	Address                  *string `json:"address"`
 	AvailableChars           int     `json:"available_chars"`
 	AvailableCharsPrepaid    int     `json:"available_chars_prepaid"`
@@ -87,385 +87,385 @@ type LoginLoginUser struct {
 	WorkbookID               int     `json:"workbook_id"`
 }
 
-func (o *LoginLoginUser) GetAddress() *string {
+func (o *User) GetAddress() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Address
 }
 
-func (o *LoginLoginUser) GetAvailableChars() int {
+func (o *User) GetAvailableChars() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableChars
 }
 
-func (o *LoginLoginUser) GetAvailableCharsPrepaid() int {
+func (o *User) GetAvailableCharsPrepaid() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableCharsPrepaid
 }
 
-func (o *LoginLoginUser) GetAvailableImages() int {
+func (o *User) GetAvailableImages() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableImages
 }
 
-func (o *LoginLoginUser) GetAvailableImagesPrepaid() int {
+func (o *User) GetAvailableImagesPrepaid() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableImagesPrepaid
 }
 
-func (o *LoginLoginUser) GetAvailableMinutes() string {
+func (o *User) GetAvailableMinutes() string {
 	if o == nil {
 		return ""
 	}
 	return o.AvailableMinutes
 }
 
-func (o *LoginLoginUser) GetAvailableMinutesPrepaid() string {
+func (o *User) GetAvailableMinutesPrepaid() string {
 	if o == nil {
 		return ""
 	}
 	return o.AvailableMinutesPrepaid
 }
 
-func (o *LoginLoginUser) GetAvailableWords() int {
+func (o *User) GetAvailableWords() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableWords
 }
 
-func (o *LoginLoginUser) GetAvailableWordsPrepaid() int {
+func (o *User) GetAvailableWordsPrepaid() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableWordsPrepaid
 }
 
-func (o *LoginLoginUser) GetBalance() int {
+func (o *User) GetBalance() int {
 	if o == nil {
 		return 0
 	}
 	return o.Balance
 }
 
-func (o *LoginLoginUser) GetCity() *string {
+func (o *User) GetCity() *string {
 	if o == nil {
 		return nil
 	}
 	return o.City
 }
 
-func (o *LoginLoginUser) GetCkbox() *string {
+func (o *User) GetCkbox() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Ckbox
 }
 
-func (o *LoginLoginUser) GetCompany() *string {
+func (o *User) GetCompany() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Company
 }
 
-func (o *LoginLoginUser) GetCountry() string {
+func (o *User) GetCountry() string {
 	if o == nil {
 		return ""
 	}
 	return o.Country
 }
 
-func (o *LoginLoginUser) GetCreatedAt() string {
+func (o *User) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *LoginLoginUser) GetDefaultTempLanguage() int {
+func (o *User) GetDefaultTempLanguage() int {
 	if o == nil {
 		return 0
 	}
 	return o.DefaultTempLanguage
 }
 
-func (o *LoginLoginUser) GetDefaultTone() *string {
+func (o *User) GetDefaultTone() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DefaultTone
 }
 
-func (o *LoginLoginUser) GetDefaultVoiceoverLanguage() string {
+func (o *User) GetDefaultVoiceoverLanguage() string {
 	if o == nil {
 		return ""
 	}
 	return o.DefaultVoiceoverLanguage
 }
 
-func (o *LoginLoginUser) GetDefaultVoiceoverVoice() string {
+func (o *User) GetDefaultVoiceoverVoice() string {
 	if o == nil {
 		return ""
 	}
 	return o.DefaultVoiceoverVoice
 }
 
-func (o *LoginLoginUser) GetEmail() string {
+func (o *User) GetEmail() string {
 	if o == nil {
 		return ""
 	}
 	return o.Email
 }
 
-func (o *LoginLoginUser) GetEmailVerifiedAt() string {
+func (o *User) GetEmailVerifiedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.EmailVerifiedAt
 }
 
-func (o *LoginLoginUser) GetGoogle2faEnabled() int {
+func (o *User) GetGoogle2faEnabled() int {
 	if o == nil {
 		return 0
 	}
 	return o.Google2faEnabled
 }
 
-func (o *LoginLoginUser) GetGoogle2faSecret() *string {
+func (o *User) GetGoogle2faSecret() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Google2faSecret
 }
 
-func (o *LoginLoginUser) GetGroup() string {
+func (o *User) GetGroup() string {
 	if o == nil {
 		return ""
 	}
 	return o.Group
 }
 
-func (o *LoginLoginUser) GetID() int {
+func (o *User) GetID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ID
 }
 
-func (o *LoginLoginUser) GetJobRole() string {
+func (o *User) GetJobRole() string {
 	if o == nil {
 		return ""
 	}
 	return o.JobRole
 }
 
-func (o *LoginLoginUser) GetLastSeen() *string {
+func (o *User) GetLastSeen() *string {
 	if o == nil {
 		return nil
 	}
 	return o.LastSeen
 }
 
-func (o *LoginLoginUser) GetMemberRole() int {
+func (o *User) GetMemberRole() int {
 	if o == nil {
 		return 0
 	}
 	return o.MemberRole
 }
 
-func (o *LoginLoginUser) GetName() string {
+func (o *User) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *LoginLoginUser) GetOauthID() *string {
+func (o *User) GetOauthID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.OauthID
 }
 
-func (o *LoginLoginUser) GetOauthType() *string {
+func (o *User) GetOauthType() *string {
 	if o == nil {
 		return nil
 	}
 	return o.OauthType
 }
 
-func (o *LoginLoginUser) GetParentID() int {
+func (o *User) GetParentID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ParentID
 }
 
-func (o *LoginLoginUser) GetPhoneNumber() *string {
+func (o *User) GetPhoneNumber() *string {
 	if o == nil {
 		return nil
 	}
 	return o.PhoneNumber
 }
 
-func (o *LoginLoginUser) GetPlanID() int {
+func (o *User) GetPlanID() int {
 	if o == nil {
 		return 0
 	}
 	return o.PlanID
 }
 
-func (o *LoginLoginUser) GetPlanType() *string {
+func (o *User) GetPlanType() *string {
 	if o == nil {
 		return nil
 	}
 	return o.PlanType
 }
 
-func (o *LoginLoginUser) GetPostalCode() *string {
+func (o *User) GetPostalCode() *string {
 	if o == nil {
 		return nil
 	}
 	return o.PostalCode
 }
 
-func (o *LoginLoginUser) GetProductID() int {
+func (o *User) GetProductID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ProductID
 }
 
-func (o *LoginLoginUser) GetProfilePhotoPath() *string {
+func (o *User) GetProfilePhotoPath() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ProfilePhotoPath
 }
 
-func (o *LoginLoginUser) GetReferralBankRequisites() *string {
+func (o *User) GetReferralBankRequisites() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ReferralBankRequisites
 }
 
-func (o *LoginLoginUser) GetReferralID() string {
+func (o *User) GetReferralID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ReferralID
 }
 
-func (o *LoginLoginUser) GetReferralPaymentMethod() *string {
+func (o *User) GetReferralPaymentMethod() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ReferralPaymentMethod
 }
 
-func (o *LoginLoginUser) GetReferralPaypal() *string {
+func (o *User) GetReferralPaypal() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ReferralPaypal
 }
 
-func (o *LoginLoginUser) GetReferredBy() string {
+func (o *User) GetReferredBy() string {
 	if o == nil {
 		return ""
 	}
 	return o.ReferredBy
 }
 
-func (o *LoginLoginUser) GetStatus() string {
+func (o *User) GetStatus() string {
 	if o == nil {
 		return ""
 	}
 	return o.Status
 }
 
-func (o *LoginLoginUser) GetSubdomain() *string {
+func (o *User) GetSubdomain() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Subdomain
 }
 
-func (o *LoginLoginUser) GetSubdomainToken() *string {
+func (o *User) GetSubdomainToken() *string {
 	if o == nil {
 		return nil
 	}
 	return o.SubdomainToken
 }
 
-func (o *LoginLoginUser) GetTotalChars() int {
+func (o *User) GetTotalChars() int {
 	if o == nil {
 		return 0
 	}
 	return o.TotalChars
 }
 
-func (o *LoginLoginUser) GetTotalImages() int {
+func (o *User) GetTotalImages() int {
 	if o == nil {
 		return 0
 	}
 	return o.TotalImages
 }
 
-func (o *LoginLoginUser) GetTotalMinutes() string {
+func (o *User) GetTotalMinutes() string {
 	if o == nil {
 		return ""
 	}
 	return o.TotalMinutes
 }
 
-func (o *LoginLoginUser) GetTotalWords() int {
+func (o *User) GetTotalWords() int {
 	if o == nil {
 		return 0
 	}
 	return o.TotalWords
 }
 
-func (o *LoginLoginUser) GetUpdatedAt() string {
+func (o *User) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.UpdatedAt
 }
 
-func (o *LoginLoginUser) GetWebsite() *string {
+func (o *User) GetWebsite() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Website
 }
 
-func (o *LoginLoginUser) GetWorkbook() string {
+func (o *User) GetWorkbook() string {
 	if o == nil {
 		return ""
 	}
 	return o.Workbook
 }
 
-func (o *LoginLoginUser) GetWorkbookFolderID() int {
+func (o *User) GetWorkbookFolderID() int {
 	if o == nil {
 		return 0
 	}
 	return o.WorkbookFolderID
 }
 
-func (o *LoginLoginUser) GetWorkbookID() int {
+func (o *User) GetWorkbookID() int {
 	if o == nil {
 		return 0
 	}
@@ -474,12 +474,12 @@ func (o *LoginLoginUser) GetWorkbookID() int {
 
 // LoginLogin - OK
 type LoginLogin struct {
-	AccessToken string         `json:"access_token"`
-	ExpiresAt   *string        `json:"expires_at"`
-	Message     string         `json:"message"`
-	Status      bool           `json:"status"`
-	TokenType   string         `json:"token_type"`
-	User        LoginLoginUser `json:"user"`
+	AccessToken string  `json:"access_token"`
+	ExpiresAt   *string `json:"expires_at"`
+	Message     string  `json:"message"`
+	Status      bool    `json:"status"`
+	TokenType   string  `json:"token_type"`
+	User        User    `json:"user"`
 }
 
 func (o *LoginLogin) GetAccessToken() string {
@@ -517,9 +517,9 @@ func (o *LoginLogin) GetTokenType() string {
 	return o.TokenType
 }
 
-func (o *LoginLogin) GetUser() LoginLoginUser {
+func (o *LoginLogin) GetUser() User {
 	if o == nil {
-		return LoginLoginUser{}
+		return User{}
 	}
 	return o.User
 }
@@ -545,7 +545,7 @@ func (o *LoginResponse) GetContentType() string {
 
 func (o *LoginResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

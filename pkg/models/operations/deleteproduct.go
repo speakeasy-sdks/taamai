@@ -77,7 +77,7 @@ func (o *DeleteProductResponse) GetDeleteProduct() *DeleteProductDeleteProduct {
 
 func (o *DeleteProductResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
