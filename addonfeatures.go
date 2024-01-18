@@ -14,18 +14,18 @@ import (
 	"strings"
 )
 
-type addonFeatures struct {
+type AddonFeatures struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAddonFeatures(sdkConfig sdkConfiguration) *addonFeatures {
-	return &addonFeatures{
+func newAddonFeatures(sdkConfig sdkConfiguration) *AddonFeatures {
+	return &AddonFeatures{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GenerateCode - Generate Code
-func (s *addonFeatures) GenerateCode(ctx context.Context, request operations.GenerateCodeRequest, opts ...operations.Option) (*operations.GenerateCodeResponse, error) {
+func (s *AddonFeatures) GenerateCode(ctx context.Context, request operations.GenerateCodeRequest, opts ...operations.Option) (*operations.GenerateCodeResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -103,7 +103,7 @@ func (s *addonFeatures) GenerateCode(ctx context.Context, request operations.Gen
 }
 
 // GenerateimagefromAI - Generate image from AI
-func (s *addonFeatures) GenerateimagefromAI(ctx context.Context, request operations.GenerateimagefromAIRequest, opts ...operations.Option) (*operations.GenerateimagefromAIResponse, error) {
+func (s *AddonFeatures) GenerateimagefromAI(ctx context.Context, request operations.GenerateimagefromAIRequest, opts ...operations.Option) (*operations.GenerateimagefromAIResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -181,7 +181,7 @@ func (s *addonFeatures) GenerateimagefromAI(ctx context.Context, request operati
 }
 
 // Generatespeechtotext - Generate speech to text
-func (s *addonFeatures) Generatespeechtotext(ctx context.Context, request *operations.GeneratespeechtotextRequestBody, opts ...operations.Option) (*operations.GeneratespeechtotextResponse, error) {
+func (s *AddonFeatures) Generatespeechtotext(ctx context.Context, request *operations.GeneratespeechtotextRequestBody, opts ...operations.Option) (*operations.GeneratespeechtotextResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -262,7 +262,7 @@ func (s *addonFeatures) Generatespeechtotext(ctx context.Context, request *opera
 }
 
 // Savecodeinworkspace - Save code in workspace
-func (s *addonFeatures) Savecodeinworkspace(ctx context.Context, request operations.SavecodeinworkspaceRequest, opts ...operations.Option) (*operations.SavecodeinworkspaceResponse, error) {
+func (s *AddonFeatures) Savecodeinworkspace(ctx context.Context, request operations.SavecodeinworkspaceRequest, opts ...operations.Option) (*operations.SavecodeinworkspaceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -340,7 +340,7 @@ func (s *addonFeatures) Savecodeinworkspace(ctx context.Context, request operati
 }
 
 // Savetranscript - Save transcript
-func (s *addonFeatures) Savetranscript(ctx context.Context, request operations.SavetranscriptRequest, opts ...operations.Option) (*operations.SavetranscriptResponse, error) {
+func (s *AddonFeatures) Savetranscript(ctx context.Context, request operations.SavetranscriptRequest, opts ...operations.Option) (*operations.SavetranscriptResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
