@@ -14,18 +14,18 @@ import (
 	"strings"
 )
 
-type product struct {
+type Product struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newProduct(sdkConfig sdkConfiguration) *product {
-	return &product{
+func newProduct(sdkConfig sdkConfiguration) *Product {
+	return &Product{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateProduct - Create Product
-func (s *product) CreateProduct(ctx context.Context, request *operations.CreateProductRequestBody, opts ...operations.Option) (*operations.CreateProductResponse, error) {
+func (s *Product) CreateProduct(ctx context.Context, request *operations.CreateProductRequestBody, opts ...operations.Option) (*operations.CreateProductResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -106,7 +106,7 @@ func (s *product) CreateProduct(ctx context.Context, request *operations.CreateP
 }
 
 // DeleteProduct - Delete Product
-func (s *product) DeleteProduct(ctx context.Context, request operations.DeleteProductRequest, opts ...operations.Option) (*operations.DeleteProductResponse, error) {
+func (s *Product) DeleteProduct(ctx context.Context, request operations.DeleteProductRequest, opts ...operations.Option) (*operations.DeleteProductResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -184,7 +184,7 @@ func (s *product) DeleteProduct(ctx context.Context, request operations.DeletePr
 }
 
 // RestoreProduct - Restore Product
-func (s *product) RestoreProduct(ctx context.Context, request operations.RestoreProductRequest, opts ...operations.Option) (*operations.RestoreProductResponse, error) {
+func (s *Product) RestoreProduct(ctx context.Context, request operations.RestoreProductRequest, opts ...operations.Option) (*operations.RestoreProductResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -262,7 +262,7 @@ func (s *product) RestoreProduct(ctx context.Context, request operations.Restore
 }
 
 // TrashedProducts - Trashed Products
-func (s *product) TrashedProducts(ctx context.Context, request operations.TrashedProductsRequest, opts ...operations.Option) (*operations.TrashedProductsResponse, error) {
+func (s *Product) TrashedProducts(ctx context.Context, request operations.TrashedProductsRequest, opts ...operations.Option) (*operations.TrashedProductsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -340,7 +340,7 @@ func (s *product) TrashedProducts(ctx context.Context, request operations.Trashe
 }
 
 // UpdateProduct - Update Product
-func (s *product) UpdateProduct(ctx context.Context, request operations.UpdateProductRequest, opts ...operations.Option) (*operations.UpdateProductResponse, error) {
+func (s *Product) UpdateProduct(ctx context.Context, request operations.UpdateProductRequest, opts ...operations.Option) (*operations.UpdateProductResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -418,7 +418,7 @@ func (s *product) UpdateProduct(ctx context.Context, request operations.UpdatePr
 }
 
 // UserProductd - User Productd
-func (s *product) UserProductd(ctx context.Context, request operations.UserProductdRequest, opts ...operations.Option) (*operations.UserProductdResponse, error) {
+func (s *Product) UserProductd(ctx context.Context, request operations.UserProductdRequest, opts ...operations.Option) (*operations.UserProductdResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -496,7 +496,7 @@ func (s *product) UserProductd(ctx context.Context, request operations.UserProdu
 }
 
 // ParmenentdeleteProduct - parmenent delete Product
-func (s *product) ParmenentdeleteProduct(ctx context.Context, request operations.ParmenentdeleteProductRequest, opts ...operations.Option) (*operations.ParmenentdeleteProductResponse, error) {
+func (s *Product) ParmenentdeleteProduct(ctx context.Context, request operations.ParmenentdeleteProductRequest, opts ...operations.Option) (*operations.ParmenentdeleteProductResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
