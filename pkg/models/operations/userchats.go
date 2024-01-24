@@ -87,7 +87,7 @@ func (o *UserchatsResponse) GetContentType() string {
 
 func (o *UserchatsResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
