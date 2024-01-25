@@ -70,7 +70,7 @@ func (o *RejectWorkbookResponse) GetContentType() string {
 
 func (o *RejectWorkbookResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
