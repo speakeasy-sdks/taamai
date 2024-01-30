@@ -7,7 +7,7 @@ import (
 	"github.com/speakeasy-sdks/taamai/pkg/utils"
 )
 
-type Datum1FoldersFolder struct {
+type Folder struct {
 	CreatedAt   *string `json:"created_at,omitempty"`
 	DeletedAt   *string `json:"deleted_at,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -20,130 +20,130 @@ type Datum1FoldersFolder struct {
 	WorkbookID  *int    `json:"workbook_id,omitempty"`
 }
 
-func (o *Datum1FoldersFolder) GetCreatedAt() *string {
+func (o *Folder) GetCreatedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedAt
 }
 
-func (o *Datum1FoldersFolder) GetDeletedAt() *string {
+func (o *Folder) GetDeletedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DeletedAt
 }
 
-func (o *Datum1FoldersFolder) GetDescription() *string {
+func (o *Folder) GetDescription() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Description
 }
 
-func (o *Datum1FoldersFolder) GetIcon() *string {
+func (o *Folder) GetIcon() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Icon
 }
 
-func (o *Datum1FoldersFolder) GetID() *int {
+func (o *Folder) GetID() *int {
 	if o == nil {
 		return nil
 	}
 	return o.ID
 }
 
-func (o *Datum1FoldersFolder) GetName() *string {
+func (o *Folder) GetName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Name
 }
 
-func (o *Datum1FoldersFolder) GetStatus() *int {
+func (o *Folder) GetStatus() *int {
 	if o == nil {
 		return nil
 	}
 	return o.Status
 }
 
-func (o *Datum1FoldersFolder) GetUpdatedAt() *string {
+func (o *Folder) GetUpdatedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.UpdatedAt
 }
 
-func (o *Datum1FoldersFolder) GetUserID() *int {
+func (o *Folder) GetUserID() *int {
 	if o == nil {
 		return nil
 	}
 	return o.UserID
 }
 
-func (o *Datum1FoldersFolder) GetWorkbookID() *int {
+func (o *Folder) GetWorkbookID() *int {
 	if o == nil {
 		return nil
 	}
 	return o.WorkbookID
 }
 
-type Datum1FoldersType string
+type FoldersType string
 
 const (
-	Datum1FoldersTypeDatum1FoldersFolder Datum1FoldersType = "Datum1_folders_Folder"
-	Datum1FoldersTypeStr                 Datum1FoldersType = "str"
+	FoldersTypeFolder FoldersType = "Folder"
+	FoldersTypeStr    FoldersType = "str"
 )
 
-type Datum1Folders struct {
-	Datum1FoldersFolder *Datum1FoldersFolder
-	Str                 *string
+type Folders struct {
+	Folder *Folder
+	Str    *string
 
-	Type Datum1FoldersType
+	Type FoldersType
 }
 
-func CreateDatum1FoldersDatum1FoldersFolder(datum1FoldersFolder Datum1FoldersFolder) Datum1Folders {
-	typ := Datum1FoldersTypeDatum1FoldersFolder
+func CreateFoldersFolder(folder Folder) Folders {
+	typ := FoldersTypeFolder
 
-	return Datum1Folders{
-		Datum1FoldersFolder: &datum1FoldersFolder,
-		Type:                typ,
+	return Folders{
+		Folder: &folder,
+		Type:   typ,
 	}
 }
 
-func CreateDatum1FoldersStr(str string) Datum1Folders {
-	typ := Datum1FoldersTypeStr
+func CreateFoldersStr(str string) Folders {
+	typ := FoldersTypeStr
 
-	return Datum1Folders{
+	return Folders{
 		Str:  &str,
 		Type: typ,
 	}
 }
 
-func (u *Datum1Folders) UnmarshalJSON(data []byte) error {
+func (u *Folders) UnmarshalJSON(data []byte) error {
 
-	datum1FoldersFolder := new(Datum1FoldersFolder)
-	if err := utils.UnmarshalJSON(data, &datum1FoldersFolder, "", true, true); err == nil {
-		u.Datum1FoldersFolder = datum1FoldersFolder
-		u.Type = Datum1FoldersTypeDatum1FoldersFolder
+	folder := Folder{}
+	if err := utils.UnmarshalJSON(data, &folder, "", true, true); err == nil {
+		u.Folder = &folder
+		u.Type = FoldersTypeFolder
 		return nil
 	}
 
-	str := new(string)
+	str := ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = str
-		u.Type = Datum1FoldersTypeStr
+		u.Str = &str
+		u.Type = FoldersTypeStr
 		return nil
 	}
 
 	return errors.New("could not unmarshal into supported union types")
 }
 
-func (u Datum1Folders) MarshalJSON() ([]byte, error) {
-	if u.Datum1FoldersFolder != nil {
-		return utils.MarshalJSON(u.Datum1FoldersFolder, "", true)
+func (u Folders) MarshalJSON() ([]byte, error) {
+	if u.Folder != nil {
+		return utils.MarshalJSON(u.Folder, "", true)
 	}
 
 	if u.Str != nil {
@@ -154,14 +154,14 @@ func (u Datum1Folders) MarshalJSON() ([]byte, error) {
 }
 
 type Datum1 struct {
-	CreatedAt string          `json:"created_at"`
-	Default   int             `json:"default"`
-	DeletedAt *string         `json:"deleted_at"`
-	Folders   []Datum1Folders `json:"folders"`
-	ID        int             `json:"id"`
-	Name      string          `json:"name"`
-	UpdatedAt string          `json:"updated_at"`
-	UserID    int             `json:"user_id"`
+	CreatedAt string    `json:"created_at"`
+	Default   int       `json:"default"`
+	DeletedAt *string   `json:"deleted_at"`
+	Folders   []Folders `json:"folders"`
+	ID        int       `json:"id"`
+	Name      string    `json:"name"`
+	UpdatedAt string    `json:"updated_at"`
+	UserID    int       `json:"user_id"`
 }
 
 func (o *Datum1) GetCreatedAt() string {
@@ -185,9 +185,9 @@ func (o *Datum1) GetDeletedAt() *string {
 	return o.DeletedAt
 }
 
-func (o *Datum1) GetFolders() []Datum1Folders {
+func (o *Datum1) GetFolders() []Folders {
 	if o == nil {
-		return []Datum1Folders{}
+		return []Folders{}
 	}
 	return o.Folders
 }

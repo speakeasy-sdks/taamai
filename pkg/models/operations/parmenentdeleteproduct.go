@@ -70,7 +70,7 @@ func (o *ParmenentdeleteProductResponse) GetContentType() string {
 
 func (o *ParmenentdeleteProductResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
