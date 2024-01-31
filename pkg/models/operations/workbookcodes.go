@@ -103,7 +103,7 @@ func (o *WorkbookcodesResponse) GetContentType() string {
 
 func (o *WorkbookcodesResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
