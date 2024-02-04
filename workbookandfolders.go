@@ -15,18 +15,18 @@ import (
 	"strings"
 )
 
-type workbookAndFolders struct {
+type WorkbookAndFolders struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newWorkbookAndFolders(sdkConfig sdkConfiguration) *workbookAndFolders {
-	return &workbookAndFolders{
+func newWorkbookAndFolders(sdkConfig sdkConfiguration) *WorkbookAndFolders {
+	return &WorkbookAndFolders{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // AddandremovefromfavDocument - Add and remove from fav Document
-func (s *workbookAndFolders) AddandremovefromfavDocument(ctx context.Context, request operations.AddandremovefromfavDocumentRequest, opts ...operations.Option) (*operations.AddandremovefromfavDocumentResponse, error) {
+func (s *WorkbookAndFolders) AddandremovefromfavDocument(ctx context.Context, request operations.AddandremovefromfavDocumentRequest, opts ...operations.Option) (*operations.AddandremovefromfavDocumentResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -104,7 +104,7 @@ func (s *workbookAndFolders) AddandremovefromfavDocument(ctx context.Context, re
 }
 
 // Contentsinworkbook - Contents in work book
-func (s *workbookAndFolders) Contentsinworkbook(ctx context.Context, request operations.ContentsinworkbookRequest, opts ...operations.Option) (*operations.ContentsinworkbookResponse, error) {
+func (s *WorkbookAndFolders) Contentsinworkbook(ctx context.Context, request operations.ContentsinworkbookRequest, opts ...operations.Option) (*operations.ContentsinworkbookResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -182,7 +182,7 @@ func (s *workbookAndFolders) Contentsinworkbook(ctx context.Context, request ope
 }
 
 // CreateFolder - Create Folder
-func (s *workbookAndFolders) CreateFolder(ctx context.Context, request operations.CreateFolderRequest, opts ...operations.Option) (*operations.CreateFolderResponse, error) {
+func (s *WorkbookAndFolders) CreateFolder(ctx context.Context, request operations.CreateFolderRequest, opts ...operations.Option) (*operations.CreateFolderResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -260,7 +260,7 @@ func (s *workbookAndFolders) CreateFolder(ctx context.Context, request operation
 }
 
 // CreateWorkbook - Create Workbook
-func (s *workbookAndFolders) CreateWorkbook(ctx context.Context, request operations.CreateWorkbookRequest, opts ...operations.Option) (*operations.CreateWorkbookResponse, error) {
+func (s *WorkbookAndFolders) CreateWorkbook(ctx context.Context, request operations.CreateWorkbookRequest, opts ...operations.Option) (*operations.CreateWorkbookResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -338,7 +338,7 @@ func (s *workbookAndFolders) CreateWorkbook(ctx context.Context, request operati
 }
 
 // DeleteWorkspace - Delete Workspace
-func (s *workbookAndFolders) DeleteWorkspace(ctx context.Context, request operations.DeleteWorkspaceRequest, opts ...operations.Option) (*operations.DeleteWorkspaceResponse, error) {
+func (s *WorkbookAndFolders) DeleteWorkspace(ctx context.Context, request operations.DeleteWorkspaceRequest, opts ...operations.Option) (*operations.DeleteWorkspaceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -416,7 +416,7 @@ func (s *workbookAndFolders) DeleteWorkspace(ctx context.Context, request operat
 }
 
 // Deleteallkindofdocuments - Delete all kind of documents
-func (s *workbookAndFolders) Deleteallkindofdocuments(ctx context.Context, opts ...operations.Option) (*operations.DeleteallkindofdocumentsResponse, error) {
+func (s *WorkbookAndFolders) Deleteallkindofdocuments(ctx context.Context, opts ...operations.Option) (*operations.DeleteallkindofdocumentsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -490,7 +490,7 @@ func (s *workbookAndFolders) Deleteallkindofdocuments(ctx context.Context, opts 
 }
 
 // Joinworkbook - Join workbook
-func (s *workbookAndFolders) Joinworkbook(ctx context.Context, request operations.JoinworkbookRequest, opts ...operations.Option) (*operations.JoinworkbookResponse, error) {
+func (s *WorkbookAndFolders) Joinworkbook(ctx context.Context, request operations.JoinworkbookRequest, opts ...operations.Option) (*operations.JoinworkbookResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -568,7 +568,7 @@ func (s *workbookAndFolders) Joinworkbook(ctx context.Context, request operation
 }
 
 // Joinworkbookrequestr - Join workbook requestr
-func (s *workbookAndFolders) Joinworkbookrequestr(ctx context.Context, request operations.JoinworkbookrequestrRequest, opts ...operations.Option) (*operations.JoinworkbookrequestrResponse, error) {
+func (s *WorkbookAndFolders) Joinworkbookrequestr(ctx context.Context, request operations.JoinworkbookrequestrRequest, opts ...operations.Option) (*operations.JoinworkbookrequestrResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -646,7 +646,7 @@ func (s *workbookAndFolders) Joinworkbookrequestr(ctx context.Context, request o
 }
 
 // PermanentDeletefolder - Permanent Delete folder
-func (s *workbookAndFolders) PermanentDeletefolder(ctx context.Context, request operations.PermanentDeletefolderRequest, opts ...operations.Option) (*operations.PermanentDeletefolderResponse, error) {
+func (s *WorkbookAndFolders) PermanentDeletefolder(ctx context.Context, request operations.PermanentDeletefolderRequest, opts ...operations.Option) (*operations.PermanentDeletefolderResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -711,7 +711,7 @@ func (s *workbookAndFolders) PermanentDeletefolder(ctx context.Context, request 
 }
 
 // PermanentDeleteworkspace - Permanent Delete workspace
-func (s *workbookAndFolders) PermanentDeleteworkspace(ctx context.Context) (*operations.PermanentDeleteworkspaceResponse, error) {
+func (s *WorkbookAndFolders) PermanentDeleteworkspace(ctx context.Context) (*operations.PermanentDeleteworkspaceResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/"
 
@@ -771,7 +771,7 @@ func (s *workbookAndFolders) PermanentDeleteworkspace(ctx context.Context) (*ope
 }
 
 // RejectWorkbook - Reject Workbook
-func (s *workbookAndFolders) RejectWorkbook(ctx context.Context, request operations.RejectWorkbookRequest, opts ...operations.Option) (*operations.RejectWorkbookResponse, error) {
+func (s *WorkbookAndFolders) RejectWorkbook(ctx context.Context, request operations.RejectWorkbookRequest, opts ...operations.Option) (*operations.RejectWorkbookResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -849,7 +849,7 @@ func (s *workbookAndFolders) RejectWorkbook(ctx context.Context, request operati
 }
 
 // RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCode - Restore Docuemnt of all type  (content.voiceover,images,transcript,code)
-func (s *workbookAndFolders) RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCode(ctx context.Context, request operations.RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeRequest, opts ...operations.Option) (*operations.RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse, error) {
+func (s *WorkbookAndFolders) RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCode(ctx context.Context, request operations.RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeRequest, opts ...operations.Option) (*operations.RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -913,7 +913,7 @@ func (s *workbookAndFolders) RestoreDocuemntofalltypeContentVoiceoverImagesTrans
 				return nil, err
 			}
 
-			res.Voiceoverimagestranscriptcode = &out
+			res.RestoreDocuemntofalltypecontentVoiceoverimagestranscriptcode = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -927,7 +927,7 @@ func (s *workbookAndFolders) RestoreDocuemntofalltypeContentVoiceoverImagesTrans
 }
 
 // RestoreWorkspace - Restore Workspace
-func (s *workbookAndFolders) RestoreWorkspace(ctx context.Context, request operations.RestoreWorkspaceRequest, opts ...operations.Option) (*operations.RestoreWorkspaceResponse, error) {
+func (s *WorkbookAndFolders) RestoreWorkspace(ctx context.Context, request operations.RestoreWorkspaceRequest, opts ...operations.Option) (*operations.RestoreWorkspaceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1005,7 +1005,7 @@ func (s *workbookAndFolders) RestoreWorkspace(ctx context.Context, request opera
 }
 
 // Setdefualtworkspace - Set defualt workspace
-func (s *workbookAndFolders) Setdefualtworkspace(ctx context.Context, request operations.SetdefualtworkspaceRequest, opts ...operations.Option) (*operations.SetdefualtworkspaceResponse, error) {
+func (s *WorkbookAndFolders) Setdefualtworkspace(ctx context.Context, request operations.SetdefualtworkspaceRequest, opts ...operations.Option) (*operations.SetdefualtworkspaceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1070,7 +1070,7 @@ func (s *workbookAndFolders) Setdefualtworkspace(ctx context.Context, request op
 }
 
 // Trashedfolders - Trashed folders
-func (s *workbookAndFolders) Trashedfolders(ctx context.Context, request operations.TrashedfoldersRequest, opts ...operations.Option) (*operations.TrashedfoldersResponse, error) {
+func (s *WorkbookAndFolders) Trashedfolders(ctx context.Context, request operations.TrashedfoldersRequest, opts ...operations.Option) (*operations.TrashedfoldersResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1148,7 +1148,7 @@ func (s *workbookAndFolders) Trashedfolders(ctx context.Context, request operati
 }
 
 // Trashedworkspaces - Trashed workspaces
-func (s *workbookAndFolders) Trashedworkspaces(ctx context.Context, request operations.TrashedworkspacesRequest, opts ...operations.Option) (*operations.TrashedworkspacesResponse, error) {
+func (s *WorkbookAndFolders) Trashedworkspaces(ctx context.Context, request operations.TrashedworkspacesRequest, opts ...operations.Option) (*operations.TrashedworkspacesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1226,7 +1226,7 @@ func (s *workbookAndFolders) Trashedworkspaces(ctx context.Context, request oper
 }
 
 // WorkbookDetail - Workbook Detail
-func (s *workbookAndFolders) WorkbookDetail(ctx context.Context, request operations.WorkbookDetailRequest, opts ...operations.Option) (*operations.WorkbookDetailResponse, error) {
+func (s *WorkbookAndFolders) WorkbookDetail(ctx context.Context, request operations.WorkbookDetailRequest, opts ...operations.Option) (*operations.WorkbookDetailResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1304,7 +1304,7 @@ func (s *workbookAndFolders) WorkbookDetail(ctx context.Context, request operati
 }
 
 // Workbookvoiceovers - Workbook voiceovers
-func (s *workbookAndFolders) Workbookvoiceovers(ctx context.Context, request operations.WorkbookvoiceoversRequest, opts ...operations.Option) (*operations.WorkbookvoiceoversResponse, error) {
+func (s *WorkbookAndFolders) Workbookvoiceovers(ctx context.Context, request operations.WorkbookvoiceoversRequest, opts ...operations.Option) (*operations.WorkbookvoiceoversResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1382,7 +1382,7 @@ func (s *workbookAndFolders) Workbookvoiceovers(ctx context.Context, request ope
 }
 
 // Allworkbooks - all workbooks
-func (s *workbookAndFolders) Allworkbooks(ctx context.Context, request operations.AllworkbooksRequest, opts ...operations.Option) (*operations.AllworkbooksResponse, error) {
+func (s *WorkbookAndFolders) Allworkbooks(ctx context.Context, request operations.AllworkbooksRequest, opts ...operations.Option) (*operations.AllworkbooksResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1460,7 +1460,7 @@ func (s *workbookAndFolders) Allworkbooks(ctx context.Context, request operation
 }
 
 // Deletefolder - delete folder
-func (s *workbookAndFolders) Deletefolder(ctx context.Context, request operations.DeletefolderRequest, opts ...operations.Option) (*operations.DeletefolderResponse, error) {
+func (s *WorkbookAndFolders) Deletefolder(ctx context.Context, request operations.DeletefolderRequest, opts ...operations.Option) (*operations.DeletefolderResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1538,7 +1538,7 @@ func (s *workbookAndFolders) Deletefolder(ctx context.Context, request operation
 }
 
 // PermanentDeletedocument - permanent Delete document
-func (s *workbookAndFolders) PermanentDeletedocument(ctx context.Context, request operations.PermanentDeletedocumentRequest, opts ...operations.Option) (*operations.PermanentDeletedocumentResponse, error) {
+func (s *WorkbookAndFolders) PermanentDeletedocument(ctx context.Context, request operations.PermanentDeletedocumentRequest, opts ...operations.Option) (*operations.PermanentDeletedocumentResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1616,7 +1616,7 @@ func (s *workbookAndFolders) PermanentDeletedocument(ctx context.Context, reques
 }
 
 // Restorefolder - restore folder
-func (s *workbookAndFolders) Restorefolder(ctx context.Context, request operations.RestorefolderRequest, opts ...operations.Option) (*operations.RestorefolderResponse, error) {
+func (s *WorkbookAndFolders) Restorefolder(ctx context.Context, request operations.RestorefolderRequest, opts ...operations.Option) (*operations.RestorefolderResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1681,7 +1681,7 @@ func (s *workbookAndFolders) Restorefolder(ctx context.Context, request operatio
 }
 
 // Userchats - user chats
-func (s *workbookAndFolders) Userchats(ctx context.Context, request operations.UserchatsRequest, opts ...operations.Option) (*operations.UserchatsResponse, error) {
+func (s *WorkbookAndFolders) Userchats(ctx context.Context, request operations.UserchatsRequest, opts ...operations.Option) (*operations.UserchatsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1759,7 +1759,7 @@ func (s *workbookAndFolders) Userchats(ctx context.Context, request operations.U
 }
 
 // Workbookcodes - workbook codes
-func (s *workbookAndFolders) Workbookcodes(ctx context.Context, request operations.WorkbookcodesRequest, opts ...operations.Option) (*operations.WorkbookcodesResponse, error) {
+func (s *WorkbookAndFolders) Workbookcodes(ctx context.Context, request operations.WorkbookcodesRequest, opts ...operations.Option) (*operations.WorkbookcodesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1837,7 +1837,7 @@ func (s *workbookAndFolders) Workbookcodes(ctx context.Context, request operatio
 }
 
 // Workbookimages - workbook images
-func (s *workbookAndFolders) Workbookimages(ctx context.Context, request operations.WorkbookimagesRequest, opts ...operations.Option) (*operations.WorkbookimagesResponse, error) {
+func (s *WorkbookAndFolders) Workbookimages(ctx context.Context, request operations.WorkbookimagesRequest, opts ...operations.Option) (*operations.WorkbookimagesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1915,7 +1915,7 @@ func (s *workbookAndFolders) Workbookimages(ctx context.Context, request operati
 }
 
 // Workbookpolicies - workbook policies
-func (s *workbookAndFolders) Workbookpolicies(ctx context.Context, request operations.WorkbookpoliciesRequest, opts ...operations.Option) (*operations.WorkbookpoliciesResponse, error) {
+func (s *WorkbookAndFolders) Workbookpolicies(ctx context.Context, request operations.WorkbookpoliciesRequest, opts ...operations.Option) (*operations.WorkbookpoliciesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -1993,7 +1993,7 @@ func (s *workbookAndFolders) Workbookpolicies(ctx context.Context, request opera
 }
 
 // Workbooktranscripts - workbook transcripts
-func (s *workbookAndFolders) Workbooktranscripts(ctx context.Context, request operations.WorkbooktranscriptsRequest, opts ...operations.Option) (*operations.WorkbooktranscriptsResponse, error) {
+func (s *WorkbookAndFolders) Workbooktranscripts(ctx context.Context, request operations.WorkbooktranscriptsRequest, opts ...operations.Option) (*operations.WorkbooktranscriptsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
