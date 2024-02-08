@@ -70,7 +70,7 @@ func (o *TrashedCustomTemplatesResponse) GetContentType() string {
 
 func (o *TrashedCustomTemplatesResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
