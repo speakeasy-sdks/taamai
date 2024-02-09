@@ -14,18 +14,18 @@ import (
 	"strings"
 )
 
-type misc struct {
+type Misc struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newMisc(sdkConfig sdkConfiguration) *misc {
-	return &misc{
+func newMisc(sdkConfig sdkConfiguration) *Misc {
+	return &Misc{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // AllCategories - All Categories
-func (s *misc) AllCategories(ctx context.Context, request operations.AllCategoriesRequest, opts ...operations.Option) (*operations.AllCategoriesResponse, error) {
+func (s *Misc) AllCategories(ctx context.Context, request operations.AllCategoriesRequest, opts ...operations.Option) (*operations.AllCategoriesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,

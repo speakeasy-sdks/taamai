@@ -62,7 +62,7 @@ type RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse struct
 	ContentType string
 	Headers     map[string][]string
 	// OK
-	Voiceoverimagestranscriptcode *RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeRestoreDocuemntofalltypecontentVoiceoverimagestranscriptcode
+	RestoreDocuemntofalltypecontentVoiceoverimagestranscriptcode *RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeRestoreDocuemntofalltypecontentVoiceoverimagestranscriptcode
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
@@ -78,16 +78,16 @@ func (o *RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse) G
 
 func (o *RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
 
-func (o *RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse) GetVoiceoverimagestranscriptcode() *RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeRestoreDocuemntofalltypecontentVoiceoverimagestranscriptcode {
+func (o *RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse) GetRestoreDocuemntofalltypecontentVoiceoverimagestranscriptcode() *RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeRestoreDocuemntofalltypecontentVoiceoverimagestranscriptcode {
 	if o == nil {
 		return nil
 	}
-	return o.Voiceoverimagestranscriptcode
+	return o.RestoreDocuemntofalltypecontentVoiceoverimagestranscriptcode
 }
 
 func (o *RestoreDocuemntofalltypeContentVoiceoverImagesTranscriptCodeResponse) GetStatusCode() int {
