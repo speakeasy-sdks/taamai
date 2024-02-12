@@ -173,7 +173,7 @@ func (o *GenerateprompttemplateResponse) GetGenerateprompttemplate() *Generatepr
 
 func (o *GenerateprompttemplateResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
