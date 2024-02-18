@@ -10,32 +10,32 @@ var UploadfileforchatpdfServerList = []string{
 	"https://taam.ai/api",
 }
 
-type UploadfileforchatpdfRequestBodyFile struct {
-	Content []byte `multipartForm:"content"`
-	File    string `multipartForm:"name=file"`
+type UploadfileforchatpdfFile struct {
+	Content  []byte `multipartForm:"content"`
+	FileName string `multipartForm:"name=file"`
 }
 
-func (o *UploadfileforchatpdfRequestBodyFile) GetContent() []byte {
+func (o *UploadfileforchatpdfFile) GetContent() []byte {
 	if o == nil {
 		return []byte{}
 	}
 	return o.Content
 }
 
-func (o *UploadfileforchatpdfRequestBodyFile) GetFile() string {
+func (o *UploadfileforchatpdfFile) GetFileName() string {
 	if o == nil {
 		return ""
 	}
-	return o.File
+	return o.FileName
 }
 
 type UploadfileforchatpdfRequestBody struct {
-	File UploadfileforchatpdfRequestBodyFile `multipartForm:"file"`
+	File UploadfileforchatpdfFile `multipartForm:"file"`
 }
 
-func (o *UploadfileforchatpdfRequestBody) GetFile() UploadfileforchatpdfRequestBodyFile {
+func (o *UploadfileforchatpdfRequestBody) GetFile() UploadfileforchatpdfFile {
 	if o == nil {
-		return UploadfileforchatpdfRequestBodyFile{}
+		return UploadfileforchatpdfFile{}
 	}
 	return o.File
 }
