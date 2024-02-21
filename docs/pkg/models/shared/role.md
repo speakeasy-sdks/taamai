@@ -1,0 +1,13 @@
+# Role
+
+
+## Fields
+
+| Field                                                      | Type                                                       | Required                                                   | Description                                                | Example                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `CreatedAt`                                                | *string*                                                   | :heavy_check_mark:                                         | N/A                                                        |                                                            |
+| `GuardName`                                                | *string*                                                   | :heavy_check_mark:                                         | N/A                                                        |                                                            |
+| `ID`                                                       | *int*                                                      | :heavy_check_mark:                                         | N/A                                                        |                                                            |
+| `Name`                                                     | *string*                                                   | :heavy_check_mark:                                         | N/A                                                        |                                                            |
+| `Pivot`                                                    | [shared.Pivot](../../../pkg/models/shared/pivot.md)        | :heavy_check_mark:                                         | N/A                                                        | {"model_id":20,"role_id":2,"model_type":"App\Models\User"} |
+| `UpdatedAt`                                                | *string*                                                   | :heavy_check_mark:                                         | N/A                                                        |                                                            |
