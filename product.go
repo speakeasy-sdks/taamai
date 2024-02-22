@@ -6,26 +6,29 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/speakeasy-sdks/taamai/internal/hooks"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
 	"github.com/speakeasy-sdks/taamai/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/taamai/pkg/utils"
 	"io"
 	"net/http"
-	"strings"
+	"net/url"
 )
 
-type product struct {
+type Product struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newProduct(sdkConfig sdkConfiguration) *product {
-	return &product{
+func newProduct(sdkConfig sdkConfiguration) *Product {
+	return &Product{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateProduct - Create Product
-func (s *product) CreateProduct(ctx context.Context, request *operations.CreateProductRequestBody, opts ...operations.Option) (*operations.CreateProductResponse, error) {
+func (s *Product) CreateProduct(ctx context.Context, request *operations.CreateProductRequestBody, opts ...operations.Option) (*operations.CreateProductResponse, error) {
+	hookCtx := hooks.HookContext{OperationID: "CreateProduct"}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -41,32 +44,52 @@ func (s *product) CreateProduct(ctx context.Context, request *operations.CreateP
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/products/create"
+	opURL, err := url.JoinPath(baseURL, "/products/create")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "form", `request:"mediaType=application/x-www-form-urlencoded"`)
 	if err != nil {
-		return nil, fmt.Errorf("error serializing request body: %w", err)
+		return nil, err
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", url, bodyReader)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
-
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	if err != nil {
+		return nil, err
+	}
 
 	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
-	}
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
 
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateProductResponse{
@@ -81,6 +104,7 @@ func (s *product) CreateProduct(ctx context.Context, request *operations.CreateP
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -106,7 +130,9 @@ func (s *product) CreateProduct(ctx context.Context, request *operations.CreateP
 }
 
 // DeleteProduct - Delete Product
-func (s *product) DeleteProduct(ctx context.Context, request operations.DeleteProductRequest, opts ...operations.Option) (*operations.DeleteProductResponse, error) {
+func (s *Product) DeleteProduct(ctx context.Context, request operations.DeleteProductRequest, opts ...operations.Option) (*operations.DeleteProductResponse, error) {
+	hookCtx := hooks.HookContext{OperationID: "DeleteProduct"}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -122,29 +148,50 @@ func (s *product) DeleteProduct(ctx context.Context, request operations.DeletePr
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/products/delete"
+	opURL, err := url.JoinPath(baseURL, "/products/delete")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	if err != nil {
+		return nil, err
+	}
+
 	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
-	}
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
 
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteProductResponse{
@@ -159,6 +206,7 @@ func (s *product) DeleteProduct(ctx context.Context, request operations.DeletePr
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -184,7 +232,9 @@ func (s *product) DeleteProduct(ctx context.Context, request operations.DeletePr
 }
 
 // RestoreProduct - Restore Product
-func (s *product) RestoreProduct(ctx context.Context, request operations.RestoreProductRequest, opts ...operations.Option) (*operations.RestoreProductResponse, error) {
+func (s *Product) RestoreProduct(ctx context.Context, request operations.RestoreProductRequest, opts ...operations.Option) (*operations.RestoreProductResponse, error) {
+	hookCtx := hooks.HookContext{OperationID: "RestoreProduct"}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -200,29 +250,50 @@ func (s *product) RestoreProduct(ctx context.Context, request operations.Restore
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/products/restore"
+	opURL, err := url.JoinPath(baseURL, "/products/restore")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	if err != nil {
+		return nil, err
+	}
+
 	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
-	}
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
 
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RestoreProductResponse{
@@ -237,6 +308,7 @@ func (s *product) RestoreProduct(ctx context.Context, request operations.Restore
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -262,7 +334,9 @@ func (s *product) RestoreProduct(ctx context.Context, request operations.Restore
 }
 
 // TrashedProducts - Trashed Products
-func (s *product) TrashedProducts(ctx context.Context, request operations.TrashedProductsRequest, opts ...operations.Option) (*operations.TrashedProductsResponse, error) {
+func (s *Product) TrashedProducts(ctx context.Context, request operations.TrashedProductsRequest, opts ...operations.Option) (*operations.TrashedProductsResponse, error) {
+	hookCtx := hooks.HookContext{OperationID: "TrashedProducts"}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -278,29 +352,50 @@ func (s *product) TrashedProducts(ctx context.Context, request operations.Trashe
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/products/trashed"
+	opURL, err := url.JoinPath(baseURL, "/products/trashed")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	if err != nil {
+		return nil, err
+	}
+
 	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
-	}
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
 
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.TrashedProductsResponse{
@@ -315,6 +410,7 @@ func (s *product) TrashedProducts(ctx context.Context, request operations.Trashe
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -340,7 +436,9 @@ func (s *product) TrashedProducts(ctx context.Context, request operations.Trashe
 }
 
 // UpdateProduct - Update Product
-func (s *product) UpdateProduct(ctx context.Context, request operations.UpdateProductRequest, opts ...operations.Option) (*operations.UpdateProductResponse, error) {
+func (s *Product) UpdateProduct(ctx context.Context, request operations.UpdateProductRequest, opts ...operations.Option) (*operations.UpdateProductResponse, error) {
+	hookCtx := hooks.HookContext{OperationID: "UpdateProduct"}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -356,29 +454,50 @@ func (s *product) UpdateProduct(ctx context.Context, request operations.UpdatePr
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/products/update"
+	opURL, err := url.JoinPath(baseURL, "/products/update")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	if err != nil {
+		return nil, err
+	}
+
 	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
-	}
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
 
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateProductResponse{
@@ -393,6 +512,7 @@ func (s *product) UpdateProduct(ctx context.Context, request operations.UpdatePr
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -418,7 +538,9 @@ func (s *product) UpdateProduct(ctx context.Context, request operations.UpdatePr
 }
 
 // UserProductd - User Productd
-func (s *product) UserProductd(ctx context.Context, request operations.UserProductdRequest, opts ...operations.Option) (*operations.UserProductdResponse, error) {
+func (s *Product) UserProductd(ctx context.Context, request operations.UserProductdRequest, opts ...operations.Option) (*operations.UserProductdResponse, error) {
+	hookCtx := hooks.HookContext{OperationID: "UserProductd"}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -434,29 +556,50 @@ func (s *product) UserProductd(ctx context.Context, request operations.UserProdu
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/products"
+	opURL, err := url.JoinPath(baseURL, "/products")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	if err != nil {
+		return nil, err
+	}
+
 	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
-	}
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
 
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UserProductdResponse{
@@ -471,6 +614,7 @@ func (s *product) UserProductd(ctx context.Context, request operations.UserProdu
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -496,7 +640,9 @@ func (s *product) UserProductd(ctx context.Context, request operations.UserProdu
 }
 
 // ParmenentdeleteProduct - parmenent delete Product
-func (s *product) ParmenentdeleteProduct(ctx context.Context, request operations.ParmenentdeleteProductRequest, opts ...operations.Option) (*operations.ParmenentdeleteProductResponse, error) {
+func (s *Product) ParmenentdeleteProduct(ctx context.Context, request operations.ParmenentdeleteProductRequest, opts ...operations.Option) (*operations.ParmenentdeleteProductResponse, error) {
+	hookCtx := hooks.HookContext{OperationID: "parmenentdeleteProduct"}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -512,29 +658,50 @@ func (s *product) ParmenentdeleteProduct(ctx context.Context, request operations
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/products/permanent-delete"
+	opURL, err := url.JoinPath(baseURL, "/products/permanent-delete")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
+	if err != nil {
+		return nil, err
+	}
+
 	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
-	}
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
 
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ParmenentdeleteProductResponse{
@@ -549,6 +716,7 @@ func (s *product) ParmenentdeleteProduct(ctx context.Context, request operations
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
