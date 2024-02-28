@@ -30,7 +30,7 @@ func (o *WorkbookDetailRequest) GetWorkbookID() int {
 	return o.WorkbookID
 }
 
-type WorkbookDetailWorkbookDetailliveData1 struct {
+type Data1 struct {
 	CreatedAt string           `json:"created_at"`
 	Default   int              `json:"default"`
 	DeletedAt *string          `json:"deleted_at"`
@@ -41,56 +41,56 @@ type WorkbookDetailWorkbookDetailliveData1 struct {
 	UserID    int              `json:"user_id"`
 }
 
-func (o *WorkbookDetailWorkbookDetailliveData1) GetCreatedAt() string {
+func (o *Data1) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *WorkbookDetailWorkbookDetailliveData1) GetDefault() int {
+func (o *Data1) GetDefault() int {
 	if o == nil {
 		return 0
 	}
 	return o.Default
 }
 
-func (o *WorkbookDetailWorkbookDetailliveData1) GetDeletedAt() *string {
+func (o *Data1) GetDeletedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DeletedAt
 }
 
-func (o *WorkbookDetailWorkbookDetailliveData1) GetFolders() []shared.Folder2 {
+func (o *Data1) GetFolders() []shared.Folder2 {
 	if o == nil {
 		return []shared.Folder2{}
 	}
 	return o.Folders
 }
 
-func (o *WorkbookDetailWorkbookDetailliveData1) GetID() int {
+func (o *Data1) GetID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ID
 }
 
-func (o *WorkbookDetailWorkbookDetailliveData1) GetName() string {
+func (o *Data1) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *WorkbookDetailWorkbookDetailliveData1) GetUpdatedAt() string {
+func (o *Data1) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.UpdatedAt
 }
 
-func (o *WorkbookDetailWorkbookDetailliveData1) GetUserID() int {
+func (o *Data1) GetUserID() int {
 	if o == nil {
 		return 0
 	}
@@ -99,14 +99,14 @@ func (o *WorkbookDetailWorkbookDetailliveData1) GetUserID() int {
 
 // WorkbookDetailWorkbookDetaillive - OK
 type WorkbookDetailWorkbookDetaillive struct {
-	Data    WorkbookDetailWorkbookDetailliveData1 `json:"data"`
-	Message string                                `json:"message"`
-	Status  string                                `json:"status"`
+	Data    Data1  `json:"data"`
+	Message string `json:"message"`
+	Status  string `json:"status"`
 }
 
-func (o *WorkbookDetailWorkbookDetaillive) GetData() WorkbookDetailWorkbookDetailliveData1 {
+func (o *WorkbookDetailWorkbookDetaillive) GetData() Data1 {
 	if o == nil {
-		return WorkbookDetailWorkbookDetailliveData1{}
+		return Data1{}
 	}
 	return o.Data
 }
@@ -146,7 +146,7 @@ func (o *WorkbookDetailResponse) GetContentType() string {
 
 func (o *WorkbookDetailResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
