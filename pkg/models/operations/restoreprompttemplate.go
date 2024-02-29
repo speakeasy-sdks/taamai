@@ -70,7 +70,7 @@ func (o *RestorePromptTemplateResponse) GetContentType() string {
 
 func (o *RestorePromptTemplateResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
