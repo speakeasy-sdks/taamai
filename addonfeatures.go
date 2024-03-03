@@ -6,26 +6,33 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/speakeasy-sdks/taamai/internal/hooks"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
 	"github.com/speakeasy-sdks/taamai/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/taamai/pkg/utils"
 	"io"
 	"net/http"
-	"strings"
+	"net/url"
 )
 
-type addonFeatures struct {
+type AddonFeatures struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAddonFeatures(sdkConfig sdkConfiguration) *addonFeatures {
-	return &addonFeatures{
+func newAddonFeatures(sdkConfig sdkConfiguration) *AddonFeatures {
+	return &AddonFeatures{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GenerateCode - Generate Code
-func (s *addonFeatures) GenerateCode(ctx context.Context, request operations.GenerateCodeRequest, opts ...operations.Option) (*operations.GenerateCodeResponse, error) {
+func (s *AddonFeatures) GenerateCode(ctx context.Context, request operations.GenerateCodeRequest, opts ...operations.Option) (*operations.GenerateCodeResponse, error) {
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "GenerateCode",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -41,14 +48,17 @@ func (s *addonFeatures) GenerateCode(ctx context.Context, request operations.Gen
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/code/process"
+	opURL, err := url.JoinPath(baseURL, "/code/process")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
@@ -56,14 +66,32 @@ func (s *addonFeatures) GenerateCode(ctx context.Context, request operations.Gen
 
 	client := s.sdkConfiguration.SecurityClient
 
-	httpRes, err := client.Do(req)
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
+		return nil, err
 	}
 
+	httpRes, err := client.Do(req)
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
+
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GenerateCodeResponse{
@@ -78,6 +106,7 @@ func (s *addonFeatures) GenerateCode(ctx context.Context, request operations.Gen
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -103,7 +132,13 @@ func (s *addonFeatures) GenerateCode(ctx context.Context, request operations.Gen
 }
 
 // GenerateimagefromAI - Generate image from AI
-func (s *addonFeatures) GenerateimagefromAI(ctx context.Context, request operations.GenerateimagefromAIRequest, opts ...operations.Option) (*operations.GenerateimagefromAIResponse, error) {
+func (s *AddonFeatures) GenerateimagefromAI(ctx context.Context, request operations.GenerateimagefromAIRequest, opts ...operations.Option) (*operations.GenerateimagefromAIResponse, error) {
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "GenerateimagefromAI",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -119,14 +154,17 @@ func (s *addonFeatures) GenerateimagefromAI(ctx context.Context, request operati
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/image/process"
+	opURL, err := url.JoinPath(baseURL, "/image/process")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
@@ -134,14 +172,32 @@ func (s *addonFeatures) GenerateimagefromAI(ctx context.Context, request operati
 
 	client := s.sdkConfiguration.SecurityClient
 
-	httpRes, err := client.Do(req)
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
+		return nil, err
 	}
 
+	httpRes, err := client.Do(req)
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
+
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GenerateimagefromAIResponse{
@@ -156,6 +212,7 @@ func (s *addonFeatures) GenerateimagefromAI(ctx context.Context, request operati
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -181,7 +238,13 @@ func (s *addonFeatures) GenerateimagefromAI(ctx context.Context, request operati
 }
 
 // Generatespeechtotext - Generate speech to text
-func (s *addonFeatures) Generatespeechtotext(ctx context.Context, request *operations.GeneratespeechtotextRequestBody, opts ...operations.Option) (*operations.GeneratespeechtotextResponse, error) {
+func (s *AddonFeatures) Generatespeechtotext(ctx context.Context, request *operations.GeneratespeechtotextRequestBody, opts ...operations.Option) (*operations.GeneratespeechtotextResponse, error) {
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "Generatespeechtotext",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -197,32 +260,52 @@ func (s *addonFeatures) Generatespeechtotext(ctx context.Context, request *opera
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/transcribe/process"
+	opURL, err := url.JoinPath(baseURL, "/transcribe/process")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "multipart", `request:"mediaType=multipart/form-data"`)
 	if err != nil {
-		return nil, fmt.Errorf("error serializing request body: %w", err)
+		return nil, err
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", url, bodyReader)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
-
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
 	client := s.sdkConfiguration.SecurityClient
 
-	httpRes, err := client.Do(req)
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
+		return nil, err
 	}
 
+	httpRes, err := client.Do(req)
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
+
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GeneratespeechtotextResponse{
@@ -237,6 +320,7 @@ func (s *addonFeatures) Generatespeechtotext(ctx context.Context, request *opera
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -262,7 +346,13 @@ func (s *addonFeatures) Generatespeechtotext(ctx context.Context, request *opera
 }
 
 // Savecodeinworkspace - Save code in workspace
-func (s *addonFeatures) Savecodeinworkspace(ctx context.Context, request operations.SavecodeinworkspaceRequest, opts ...operations.Option) (*operations.SavecodeinworkspaceResponse, error) {
+func (s *AddonFeatures) Savecodeinworkspace(ctx context.Context, request operations.SavecodeinworkspaceRequest, opts ...operations.Option) (*operations.SavecodeinworkspaceResponse, error) {
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "Savecodeinworkspace",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -278,14 +368,17 @@ func (s *addonFeatures) Savecodeinworkspace(ctx context.Context, request operati
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/code/save"
+	opURL, err := url.JoinPath(baseURL, "/code/save")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
@@ -293,14 +386,32 @@ func (s *addonFeatures) Savecodeinworkspace(ctx context.Context, request operati
 
 	client := s.sdkConfiguration.SecurityClient
 
-	httpRes, err := client.Do(req)
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
+		return nil, err
 	}
 
+	httpRes, err := client.Do(req)
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
+
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SavecodeinworkspaceResponse{
@@ -315,6 +426,7 @@ func (s *addonFeatures) Savecodeinworkspace(ctx context.Context, request operati
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
@@ -340,7 +452,13 @@ func (s *addonFeatures) Savecodeinworkspace(ctx context.Context, request operati
 }
 
 // Savetranscript - Save transcript
-func (s *addonFeatures) Savetranscript(ctx context.Context, request operations.SavetranscriptRequest, opts ...operations.Option) (*operations.SavetranscriptResponse, error) {
+func (s *AddonFeatures) Savetranscript(ctx context.Context, request operations.SavetranscriptRequest, opts ...operations.Option) (*operations.SavetranscriptResponse, error) {
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "Savetranscript",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionServerURL,
@@ -356,14 +474,17 @@ func (s *addonFeatures) Savetranscript(ctx context.Context, request operations.S
 		baseURL = *o.ServerURL
 	}
 
-	url := strings.TrimSuffix(baseURL, "/") + "/transcribe/save"
+	opURL, err := url.JoinPath(baseURL, "/transcribe/save")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", url, nil)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
 	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
@@ -371,14 +492,32 @@ func (s *addonFeatures) Savetranscript(ctx context.Context, request operations.S
 
 	client := s.sdkConfiguration.SecurityClient
 
-	httpRes, err := client.Do(req)
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
+		return nil, err
 	}
 
+	httpRes, err := client.Do(req)
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
+
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SavetranscriptResponse{
@@ -393,6 +532,7 @@ func (s *addonFeatures) Savetranscript(ctx context.Context, request operations.S
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
