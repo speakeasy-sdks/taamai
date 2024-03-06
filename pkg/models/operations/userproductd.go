@@ -71,7 +71,7 @@ func (o *UserProductdResponse) GetContentType() string {
 
 func (o *UserProductdResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
