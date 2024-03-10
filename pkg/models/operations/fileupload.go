@@ -10,32 +10,32 @@ var FileuploadServerList = []string{
 	"https://taam.ai/api",
 }
 
-type FileuploadRequestBodyFile struct {
-	Content []byte `multipartForm:"content"`
-	File    string `multipartForm:"name=file"`
+type File struct {
+	Content  []byte `multipartForm:"content"`
+	FileName string `multipartForm:"name=file"`
 }
 
-func (o *FileuploadRequestBodyFile) GetContent() []byte {
+func (o *File) GetContent() []byte {
 	if o == nil {
 		return []byte{}
 	}
 	return o.Content
 }
 
-func (o *FileuploadRequestBodyFile) GetFile() string {
+func (o *File) GetFileName() string {
 	if o == nil {
 		return ""
 	}
-	return o.File
+	return o.FileName
 }
 
 type FileuploadRequestBody struct {
-	File FileuploadRequestBodyFile `multipartForm:"file"`
+	File File `multipartForm:"file"`
 }
 
-func (o *FileuploadRequestBody) GetFile() FileuploadRequestBodyFile {
+func (o *FileuploadRequestBody) GetFile() File {
 	if o == nil {
-		return FileuploadRequestBodyFile{}
+		return File{}
 	}
 	return o.File
 }
