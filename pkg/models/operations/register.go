@@ -54,7 +54,7 @@ func (o *RegisterRequest) GetSubdomain() string {
 	return o.Subdomain
 }
 
-type RegisterExamplewithdefaultplansubdomainandsubsctpionUser2 struct {
+type User2 struct {
 	AvailableChars           int           `json:"available_chars"`
 	AvailableCharsPrepaid    string        `json:"available_chars_prepaid"`
 	AvailableImages          int           `json:"available_images"`
@@ -88,217 +88,217 @@ type RegisterExamplewithdefaultplansubdomainandsubsctpionUser2 struct {
 	WorkbookID               int           `json:"workbook_id"`
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetAvailableChars() int {
+func (o *User2) GetAvailableChars() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableChars
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetAvailableCharsPrepaid() string {
+func (o *User2) GetAvailableCharsPrepaid() string {
 	if o == nil {
 		return ""
 	}
 	return o.AvailableCharsPrepaid
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetAvailableImages() int {
+func (o *User2) GetAvailableImages() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableImages
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetAvailableImagesPrepaid() string {
+func (o *User2) GetAvailableImagesPrepaid() string {
 	if o == nil {
 		return ""
 	}
 	return o.AvailableImagesPrepaid
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetAvailableMinutes() int {
+func (o *User2) GetAvailableMinutes() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableMinutes
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetAvailableMinutesPrepaid() string {
+func (o *User2) GetAvailableMinutesPrepaid() string {
 	if o == nil {
 		return ""
 	}
 	return o.AvailableMinutesPrepaid
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetAvailableWords() int {
+func (o *User2) GetAvailableWords() int {
 	if o == nil {
 		return 0
 	}
 	return o.AvailableWords
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetAvailableWordsPrepaid() string {
+func (o *User2) GetAvailableWordsPrepaid() string {
 	if o == nil {
 		return ""
 	}
 	return o.AvailableWordsPrepaid
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetCountry() string {
+func (o *User2) GetCountry() string {
 	if o == nil {
 		return ""
 	}
 	return o.Country
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetCreatedAt() string {
+func (o *User2) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetDefaultVoiceoverLanguage() string {
+func (o *User2) GetDefaultVoiceoverLanguage() string {
 	if o == nil {
 		return ""
 	}
 	return o.DefaultVoiceoverLanguage
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetDefaultVoiceoverVoice() string {
+func (o *User2) GetDefaultVoiceoverVoice() string {
 	if o == nil {
 		return ""
 	}
 	return o.DefaultVoiceoverVoice
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetEmail() string {
+func (o *User2) GetEmail() string {
 	if o == nil {
 		return ""
 	}
 	return o.Email
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetEmailVerifiedAt() string {
+func (o *User2) GetEmailVerifiedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.EmailVerifiedAt
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetGroup() string {
+func (o *User2) GetGroup() string {
 	if o == nil {
 		return ""
 	}
 	return o.Group
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetID() int {
+func (o *User2) GetID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ID
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetJobRole() string {
+func (o *User2) GetJobRole() string {
 	if o == nil {
 		return ""
 	}
 	return o.JobRole
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetName() string {
+func (o *User2) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetPlanID() int {
+func (o *User2) GetPlanID() int {
 	if o == nil {
 		return 0
 	}
 	return o.PlanID
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetReferralID() string {
+func (o *User2) GetReferralID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ReferralID
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetReferredBy() string {
+func (o *User2) GetReferredBy() string {
 	if o == nil {
 		return ""
 	}
 	return o.ReferredBy
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetRoles() []shared.Role {
+func (o *User2) GetRoles() []shared.Role {
 	if o == nil {
 		return []shared.Role{}
 	}
 	return o.Roles
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetStatus() string {
+func (o *User2) GetStatus() string {
 	if o == nil {
 		return ""
 	}
 	return o.Status
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetTotalChars() int {
+func (o *User2) GetTotalChars() int {
 	if o == nil {
 		return 0
 	}
 	return o.TotalChars
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetTotalImages() int {
+func (o *User2) GetTotalImages() int {
 	if o == nil {
 		return 0
 	}
 	return o.TotalImages
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetTotalMinutes() int {
+func (o *User2) GetTotalMinutes() int {
 	if o == nil {
 		return 0
 	}
 	return o.TotalMinutes
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetTotalWords() int {
+func (o *User2) GetTotalWords() int {
 	if o == nil {
 		return 0
 	}
 	return o.TotalWords
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetUpdatedAt() string {
+func (o *User2) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.UpdatedAt
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetWorkbook() string {
+func (o *User2) GetWorkbook() string {
 	if o == nil {
 		return ""
 	}
 	return o.Workbook
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetWorkbookFolderID() int {
+func (o *User2) GetWorkbookFolderID() int {
 	if o == nil {
 		return 0
 	}
 	return o.WorkbookFolderID
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetWorkbookID() int {
+func (o *User2) GetWorkbookID() int {
 	if o == nil {
 		return 0
 	}
@@ -307,10 +307,10 @@ func (o *RegisterExamplewithdefaultplansubdomainandsubsctpionUser2) GetWorkbookI
 
 // RegisterExamplewithdefaultplansubdomainandsubsctpion - OK
 type RegisterExamplewithdefaultplansubdomainandsubsctpion struct {
-	AccessToken string                                                    `json:"access_token"`
-	Message     string                                                    `json:"message"`
-	Result      bool                                                      `json:"result"`
-	User        RegisterExamplewithdefaultplansubdomainandsubsctpionUser2 `json:"user"`
+	AccessToken string `json:"access_token"`
+	Message     string `json:"message"`
+	Result      bool   `json:"result"`
+	User        User2  `json:"user"`
 }
 
 func (o *RegisterExamplewithdefaultplansubdomainandsubsctpion) GetAccessToken() string {
@@ -334,9 +334,9 @@ func (o *RegisterExamplewithdefaultplansubdomainandsubsctpion) GetResult() bool 
 	return o.Result
 }
 
-func (o *RegisterExamplewithdefaultplansubdomainandsubsctpion) GetUser() RegisterExamplewithdefaultplansubdomainandsubsctpionUser2 {
+func (o *RegisterExamplewithdefaultplansubdomainandsubsctpion) GetUser() User2 {
 	if o == nil {
-		return RegisterExamplewithdefaultplansubdomainandsubsctpionUser2{}
+		return User2{}
 	}
 	return o.User
 }
@@ -362,7 +362,7 @@ func (o *RegisterResponse) GetContentType() string {
 
 func (o *RegisterResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
