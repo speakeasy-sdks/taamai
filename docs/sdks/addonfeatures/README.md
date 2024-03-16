@@ -19,16 +19,16 @@ Generate Code
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -41,7 +41,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GenerateCode != nil {
         // handle response
     }
@@ -50,17 +49,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
-| `request`                                                                        | [operations.GenerateCodeRequest](../../models/operations/generatecoderequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
+| `request`                                                                            | [operations.GenerateCodeRequest](../../pkg/models/operations/generatecoderequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `opts`                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                         | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
 
 
 ### Response
 
-**[*operations.GenerateCodeResponse](../../models/operations/generatecoderesponse.md), error**
-
+**[*operations.GenerateCodeResponse](../../pkg/models/operations/generatecoderesponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GenerateimagefromAI
 
@@ -72,16 +73,16 @@ Generate image from AI
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -97,7 +98,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GenerateimagefromAI != nil {
         // handle response
     }
@@ -106,17 +106,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `request`                                                                                      | [operations.GenerateimagefromAIRequest](../../models/operations/generateimagefromairequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.GenerateimagefromAIRequest](../../pkg/models/operations/generateimagefromairequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                       | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 
 ### Response
 
-**[*operations.GenerateimagefromAIResponse](../../models/operations/generateimagefromairesponse.md), error**
-
+**[*operations.GenerateimagefromAIResponse](../../pkg/models/operations/generateimagefromairesponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Generatespeechtotext
 
@@ -128,23 +130,23 @@ Generate speech to text
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
     res, err := s.AddonFeatures.Generatespeechtotext(ctx, &operations.GeneratespeechtotextRequestBody{
-        AudioFile: operations.GeneratespeechtotextRequestBodyAudioFile{
-            AudioFile: "string",
-            Content: []byte("\H(gC_iAf,"),
+        AudioFile: operations.AudioFile{
+            Content: []byte("0xe91A8eB7A2"),
+            FileName: "parse.wav",
         },
         Document: "new",
         Language: "en",
@@ -156,7 +158,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Generatespeechtotext != nil {
         // handle response
     }
@@ -165,17 +166,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
-| `request`                                                                                                | [operations.GeneratespeechtotextRequestBody](../../models/operations/generatespeechtotextrequestbody.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `opts`                                                                                                   | [][operations.Option](../../models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
+| `request`                                                                                                    | [operations.GeneratespeechtotextRequestBody](../../pkg/models/operations/generatespeechtotextrequestbody.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `opts`                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                           | The options for this request.                                                                                |
 
 
 ### Response
 
-**[*operations.GeneratespeechtotextResponse](../../models/operations/generatespeechtotextresponse.md), error**
-
+**[*operations.GeneratespeechtotextResponse](../../pkg/models/operations/generatespeechtotextresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Savecodeinworkspace
 
@@ -187,16 +190,16 @@ Save code in workspace
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -209,7 +212,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Savecodeinworkspace != nil {
         // handle response
     }
@@ -218,17 +220,19 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `request`                                                                                      | [operations.SavecodeinworkspaceRequest](../../models/operations/savecodeinworkspacerequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.SavecodeinworkspaceRequest](../../pkg/models/operations/savecodeinworkspacerequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                       | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 
 ### Response
 
-**[*operations.SavecodeinworkspaceResponse](../../models/operations/savecodeinworkspaceresponse.md), error**
-
+**[*operations.SavecodeinworkspaceResponse](../../pkg/models/operations/savecodeinworkspaceresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Savetranscript
 
@@ -240,16 +244,16 @@ Save transcript
 package main
 
 import(
-	"context"
-	"log"
-	"github.com/speakeasy-sdks/taamai"
 	"github.com/speakeasy-sdks/taamai/pkg/models/shared"
+	"github.com/speakeasy-sdks/taamai"
+	"context"
 	"github.com/speakeasy-sdks/taamai/pkg/models/operations"
+	"log"
 )
 
 func main() {
     s := taamai.New(
-        taamai.WithSecurity(""),
+        taamai.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     ctx := context.Background()
@@ -265,7 +269,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Savetranscript != nil {
         // handle response
     }
@@ -274,14 +277,16 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `ctx`                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                | :heavy_check_mark:                                                                   | The context to use for the request.                                                  |
-| `request`                                                                            | [operations.SavetranscriptRequest](../../models/operations/savetranscriptrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `opts`                                                                               | [][operations.Option](../../models/operations/option.md)                             | :heavy_minus_sign:                                                                   | The options for this request.                                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
+| `request`                                                                                | [operations.SavetranscriptRequest](../../pkg/models/operations/savetranscriptrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `opts`                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                             | :heavy_minus_sign:                                                                       | The options for this request.                                                            |
 
 
 ### Response
 
-**[*operations.SavetranscriptResponse](../../models/operations/savetranscriptresponse.md), error**
-
+**[*operations.SavetranscriptResponse](../../pkg/models/operations/savetranscriptresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

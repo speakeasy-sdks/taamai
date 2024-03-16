@@ -181,7 +181,7 @@ func (o *CustomTemplategenerateResponse) GetCustomTemplategenerate() *CustomTemp
 
 func (o *CustomTemplategenerateResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
