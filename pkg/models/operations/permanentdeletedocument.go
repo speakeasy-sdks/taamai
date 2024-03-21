@@ -78,7 +78,7 @@ func (o *PermanentDeletedocumentResponse) GetContentType() string {
 
 func (o *PermanentDeletedocumentResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
