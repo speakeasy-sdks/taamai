@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-type CreateCustomTemplateCreateCustomTemplateData12 struct {
+type Data12 struct {
 	CreatedAt    string         `json:"created_at"`
 	Description  *string        `json:"description"`
 	Fields       []shared.Field `json:"fields"`
@@ -26,112 +26,112 @@ type CreateCustomTemplateCreateCustomTemplateData12 struct {
 	UserID       string         `json:"user_id"`
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetCreatedAt() string {
+func (o *Data12) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetDescription() *string {
+func (o *Data12) GetDescription() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Description
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetFields() []shared.Field {
+func (o *Data12) GetFields() []shared.Field {
 	if o == nil {
 		return []shared.Field{}
 	}
 	return o.Fields
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetGroup() string {
+func (o *Data12) GetGroup() string {
 	if o == nil {
 		return ""
 	}
 	return o.Group
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetIcon() string {
+func (o *Data12) GetIcon() string {
 	if o == nil {
 		return ""
 	}
 	return o.Icon
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetID() int {
+func (o *Data12) GetID() int {
 	if o == nil {
 		return 0
 	}
 	return o.ID
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetName() string {
+func (o *Data12) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetPackage() string {
+func (o *Data12) GetPackage() string {
 	if o == nil {
 		return ""
 	}
 	return o.Package
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetProfessional() bool {
+func (o *Data12) GetProfessional() bool {
 	if o == nil {
 		return false
 	}
 	return o.Professional
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetPrompt() string {
+func (o *Data12) GetPrompt() string {
 	if o == nil {
 		return ""
 	}
 	return o.Prompt
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetSlug() string {
+func (o *Data12) GetSlug() string {
 	if o == nil {
 		return ""
 	}
 	return o.Slug
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetStatus() bool {
+func (o *Data12) GetStatus() bool {
 	if o == nil {
 		return false
 	}
 	return o.Status
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetTemplateCode() string {
+func (o *Data12) GetTemplateCode() string {
 	if o == nil {
 		return ""
 	}
 	return o.TemplateCode
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetTone() bool {
+func (o *Data12) GetTone() bool {
 	if o == nil {
 		return false
 	}
 	return o.Tone
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetUpdatedAt() string {
+func (o *Data12) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.UpdatedAt
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplateData12) GetUserID() string {
+func (o *Data12) GetUserID() string {
 	if o == nil {
 		return ""
 	}
@@ -140,10 +140,10 @@ func (o *CreateCustomTemplateCreateCustomTemplateData12) GetUserID() string {
 
 // CreateCustomTemplateCreateCustomTemplate - OK
 type CreateCustomTemplateCreateCustomTemplate struct {
-	Code    string                                         `json:"code"`
-	Data    CreateCustomTemplateCreateCustomTemplateData12 `json:"data"`
-	Message string                                         `json:"message"`
-	Status  string                                         `json:"status"`
+	Code    string `json:"code"`
+	Data    Data12 `json:"data"`
+	Message string `json:"message"`
+	Status  string `json:"status"`
 }
 
 func (o *CreateCustomTemplateCreateCustomTemplate) GetCode() string {
@@ -153,9 +153,9 @@ func (o *CreateCustomTemplateCreateCustomTemplate) GetCode() string {
 	return o.Code
 }
 
-func (o *CreateCustomTemplateCreateCustomTemplate) GetData() CreateCustomTemplateCreateCustomTemplateData12 {
+func (o *CreateCustomTemplateCreateCustomTemplate) GetData() Data12 {
 	if o == nil {
-		return CreateCustomTemplateCreateCustomTemplateData12{}
+		return Data12{}
 	}
 	return o.Data
 }
@@ -202,7 +202,7 @@ func (o *CreateCustomTemplateResponse) GetCreateCustomTemplate() *CreateCustomTe
 
 func (o *CreateCustomTemplateResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
