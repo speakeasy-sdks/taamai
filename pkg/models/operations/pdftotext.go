@@ -10,32 +10,32 @@ var PdftotextServerList = []string{
 	"https://taam.ai/api",
 }
 
-type PdftotextRequestBodyFile struct {
-	Content []byte `multipartForm:"content"`
-	File    string `multipartForm:"name=file"`
+type PdftotextFile struct {
+	Content  []byte `multipartForm:"content"`
+	FileName string `multipartForm:"name=file"`
 }
 
-func (o *PdftotextRequestBodyFile) GetContent() []byte {
+func (o *PdftotextFile) GetContent() []byte {
 	if o == nil {
 		return []byte{}
 	}
 	return o.Content
 }
 
-func (o *PdftotextRequestBodyFile) GetFile() string {
+func (o *PdftotextFile) GetFileName() string {
 	if o == nil {
 		return ""
 	}
-	return o.File
+	return o.FileName
 }
 
 type PdftotextRequestBody struct {
-	File PdftotextRequestBodyFile `multipartForm:"file"`
+	File PdftotextFile `multipartForm:"file"`
 }
 
-func (o *PdftotextRequestBody) GetFile() PdftotextRequestBodyFile {
+func (o *PdftotextRequestBody) GetFile() PdftotextFile {
 	if o == nil {
-		return PdftotextRequestBodyFile{}
+		return PdftotextFile{}
 	}
 	return o.File
 }
