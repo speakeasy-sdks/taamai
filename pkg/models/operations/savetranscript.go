@@ -102,7 +102,7 @@ func (o *SavetranscriptResponse) GetContentType() string {
 
 func (o *SavetranscriptResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
